@@ -10,6 +10,7 @@ class Meta(type):
     def __init__(cls, classname, supers, classdict):
         print(Meta, ' __init__')
         super(Meta, cls).__init__(classname, supers, classdict)
+        #type.__init__(cls, name, bases, dct) # call type __ini__
 
 
 def MetaFunc(classname, supers, classdict):
