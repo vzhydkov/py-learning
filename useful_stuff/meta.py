@@ -1,3 +1,7 @@
+# class C: pass
+# its:
+# C = type('C', (), {})
+
 class Meta(type):
     def __new__(meta, classname, supers, classdict):
         print(Meta, ' __new__')
@@ -25,3 +29,21 @@ class Spam(metaclass=Meta):
 
 print('making instance')
 X = Spam()
+
+
+""" singleton """
+class Singleton(type):
+    instance = None
+    def __call__(cls, *args, **kw):
+        if not cls.instance:
+             cls.instance = super(Singleton, cls).__call__(*args, **kw)
+        return cls.instance
+
+
+class ASingleton(object, metaclass=Singleton):
+    # __metaclass__ = Singleton
+
+
+a = ASingleton()
+b = ASingleton()
+assert a is b
