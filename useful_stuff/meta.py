@@ -1,6 +1,7 @@
 # class C: pass
 # its:
 # C = type('C', (), {})
+# NewType = type("NewType", (object,), {"x": "hello"})
 
 class Meta(type):
     def __new__(meta, classname, supers, classdict):
