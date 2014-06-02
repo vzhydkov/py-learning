@@ -7,11 +7,16 @@ class Meta(type):
     def __new__(meta, classname, supers, classdict):
         print(Meta, ' __new__')
         return super(Meta, meta).__new__(meta, classname, supers, classdict)
+        #return type.__new__(meta, classname, supers, classdict)
 
     def __init__(cls, classname, supers, classdict):
         print(Meta, ' __init__')
         super(Meta, cls).__init__(classname, supers, classdict)
         #type.__init__(cls, name, bases, dct) # call type __ini__
+    def __call__(cls, *args, **kwargs):
+        print(Meta, ' __call__')
+        return super(Meta, cls).__call__(cls, *args, **kwargs)
+        #return type.__call__(cls, *args, **kwargs)
 
 
 def MetaFunc(classname, supers, classdict):
