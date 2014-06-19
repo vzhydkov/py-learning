@@ -1,4 +1,7 @@
-# only py 3
+import sys
+import time
+
+"""Python 3"""
 def tracer(func):
     calls = 0
     def onCall(*args, **kwargs):
@@ -8,7 +11,7 @@ def tracer(func):
         return func(*args, **kwargs)
     return onCall
 
-import time
+
 def timer(label='', trace=True):
     def onDecorator(func):
         def onCall(*args, **kargs):
@@ -25,7 +28,7 @@ def timer(label='', trace=True):
         return onCall
     return onDecorator
 
-if  __name__ ==  "__main__":
+if __name__ == "__main__" and sys.version_info[0] >= 3:
     class Person:
         @tracer
         def __init__(self, name, pay):

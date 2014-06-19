@@ -8,7 +8,7 @@ class Class:
         print('static_method')
 
     def instance_method(self):
-        print('instance_method')
+        print(self, 'instance_method')
 
 instance = Class()
 
@@ -22,8 +22,8 @@ instance.static_method()
 instance.instance_method()
 
 
-""" property """
 class C(object):
+    """ property """
     def __init__(self):
         self._x = None
 
@@ -31,16 +31,16 @@ class C(object):
         return self._x
 
     def setx(self, value):
-
         self._x = value
+
     def delx(self):
         del self._x
 
     x = property(getx, setx, delx, "I'm the 'x' property.")
 
 
-""" decorators property """
 class C(object):
+    """ decorators property """
     def __init__(self):
         self._x = None
 
