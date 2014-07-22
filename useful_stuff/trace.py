@@ -14,9 +14,9 @@ def tracer(func):
 
 def timer(label='', trace=True):
     def onDecorator(func):
-        def onCall(*args, **kargs):
+        def onCall(*args, **kwargs):
             start = time.clock()
-            result = func(*args, **kargs)
+            result = func(*args, **kwargs)
             elapsed = time.clock() - start
             onCall.alltime += elapsed
             if trace:

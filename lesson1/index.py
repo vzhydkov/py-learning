@@ -51,7 +51,7 @@ print(dict(zip(input[0::2], input[1::2])))
 # 6
 def get_prime_numbers(n):
     res=[]
-    for i in xrange(2, n+1):  # range py3
+    for i in range(2, n + 1):
         for j in res:
             if i % j == 0:
                 break

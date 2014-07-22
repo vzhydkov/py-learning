@@ -10,7 +10,7 @@ def benchmark(func):
     def wrapper(*args, **kwargs):
         t = time.clock()
         res = func(*args, **kwargs)
-        print 'Benchmark:', time.clock() - t, '(sec)'
+        print('Benchmark:', time.clock() - t, '(sec)')
         return res
     return wrapper
 
@@ -22,7 +22,7 @@ def logging(func):
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         res = func(*args, **kwargs)
-        print 'Logging:', func.__name__, args, kwargs
+        print('Logging:', func.__name__, args, kwargs)
         return res
     return wrapper
 
@@ -36,7 +36,7 @@ def counter(func):
     def wrapper(*args, **kwargs):
         counter.count[func.__name__] += 1
         res = func(*args, **kwargs)
-        print "Counter: {0} was called: {1}x".format(func.__name__, counter.count[func.__name__])
+        print('Counter: {0} was called: {1}x'.format(func.__name__, counter.count[func.__name__]))
         return res
     return wrapper
 

@@ -3,7 +3,7 @@ from Queue import Queue
 from threading import Thread
 from lxml.html import parse
 
-
+"""Python 2"""
 class Crawler():
     def __init__(self, queue, available_depth=50):
         self.queue = queue

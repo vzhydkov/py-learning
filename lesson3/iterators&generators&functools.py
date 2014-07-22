@@ -16,6 +16,13 @@ class Counter:
         else:
             raise StopIteration
 
+    def __next__(self):
+        """ support python 3 """
+        if self.lst:
+            return self.lst.pop(randrange(0, len(self.lst)))
+        else:
+            raise StopIteration
+
 # 2
 def custom_yield(lst, n_max):
     n_sum = 0
