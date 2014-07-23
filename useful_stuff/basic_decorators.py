@@ -1,7 +1,7 @@
 class Class:
     @classmethod
     def class_method(cls):
-        print('class_method')
+        print(cls, 'class_method')
 
     @staticmethod
     def static_method():
