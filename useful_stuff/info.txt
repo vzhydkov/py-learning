@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-
-"""
 # str&bytes in python3
 Так как str и bytes не могут быть смешаны, вы всегда должны их явно преобразовывать.
 Используйте str.encode(), чтобы перейти от str к bytes и bytes.decode(), чтобы перейти от bytes к str.
@@ -8,4 +5,13 @@
 
 # list comprehension
 [ <output value>  for <element> in <list>  <optional criteria> ]
-"""
+
+# https://docs.python.org/2/howto/webservers.html
+<Directory "path">
+     Options +ExecCGI
+     AddHandler cgi-script .cgi .py
+     Order allow,deny
+     Allow from all
+</Directory>
+
+# CGI manual: CGI link: http://www.tutorialspoint.com/python/python_cgi_programming.htm
