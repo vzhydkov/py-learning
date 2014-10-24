@@ -1,48 +1,45 @@
-from datetime import datetime
-from Queue import Queue
-from threading import Thread
-from lxml.html import parse
+from bs4 import BeautifulSoup
+try:
+    import urllib2 as urllib
+except ImportError:
+    import urllib
+try:
+    import http.cookiejar as cookielib
+except ImportError:
+    import cookielib
 
-"""Python 2"""
-class Crawler():
-    def __init__(self, queue, available_depth=50):
-        self.queue = queue
-        self.available_depth = available_depth
-        self.current_depth = 0
+cj = cookielib.CookieJar()
+c1 = cookielib.Cookie(version=0, name='uid',
+                      value='7530',
+                      port=None, port_specified=False,
+                      domain='tracker.maxnet.ua',
+                      domain_specified=True,
+                      domain_initial_dot=True, path='/',
+                      path_specified=True, secure=False,
+                      expires=None, discard=True, comment=None,
+                      comment_url=None, rest={'HttpOnly': None})
+c2 = cookielib.Cookie(version=0, name='pass',
+                      value='bfd543fc40cd9e953845fd4239086255',
+                      port=None, port_specified=False,
+                      domain='tracker.maxnet.ua',
+                      domain_specified=True,
+                      domain_initial_dot=True, path='/',
+                      path_specified=True, secure=False,
+                      expires=None, discard=True, comment=None,
+                      comment_url=None, rest={'HttpOnly': None})
+cj.set_cookie(c1)
+cj.set_cookie(c2)
+opener = urllib.build_opener(urllib.HTTPCookieProcessor(cj))
+opener.addheaders = [('User-agent', 'Mozilla/4.0 (compatible; MSIE 5.5; Windows NT)')]
 
-    def job(self, tread_id):
-        while not self.queue.empty():
-            item = self.queue.get()
-            try:
-                start = datetime.now()
-                page = parse(item).getroot()
-                if page is not None:
-                    for link in page.cssselect('a'):
-                        self.set_job(link.get('href'))
-                    images = len(page.cssselect('img'))
-                    elapsed = datetime.now() - start
-                    print('Thread-%d: %s (%d images) %d.%d' %
-                          (tread_id, item, images, elapsed.seconds, elapsed.microseconds))
-            except IOError:
-                print('Thread %d: not a real URL: %s' % (tread_id, item))
-            self.queue.task_done()
+# for py2 need import urllib
+# values = {'name': 'Michael Ford',
+#           'location': 'Northampton',
+#           'language': 'Python'}
+# data = urllib.urlencode(values)
 
-    def set_job(self, url):
-        if self.current_depth < self.available_depth:
-            self.queue.put(url)
-            self.current_depth += 1
+response = opener.open('http://tracker.maxnet.ua/details.php?id=76590')
+soup = BeautifulSoup(response.read().decode('cp1251'))
 
-crawler = Crawler(Queue())
-crawler.set_job('http://sfw.so')
-crawler.set_job('http://itc.ua')
-
-for tread_id in range(crawler.queue.qsize()):
-    tread = Thread(target=crawler.job, args=(tread_id, ))
-    tread.daemon = True
-    tread.start()
-
-crawler.queue.join()
-
-# need add checking "netloc"
-# from urlparse import urlparse
-# print urlparse(url)
+for link in soup.find_all('strong'):
+    print(link)
