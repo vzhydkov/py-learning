@@ -4,8 +4,11 @@
 import zmq
 import time
 from random import choice
-from Queue import Queue
 from threading import Thread
+try:
+    from Queue import Queue
+except ImportError:
+    from queue import Queue
 
 
 class Publish():
@@ -50,12 +53,12 @@ class MyQueue():
     def set_job(self, func):
         self.queue.put(func)
 
+if __name__ == '__main__':
+    myQueue = MyQueue(Queue())
+    myQueue.set_job(Publish())
+    myQueue.set_job(Subscribe())
 
-myQueue = MyQueue(Queue())
-myQueue.set_job(Publish())
-myQueue.set_job(Subscribe())
+    for tread_id in range(myQueue.queue.qsize()):
+        Thread(target=myQueue.job, args=(tread_id, )).start()
 
-for tread_id in range(myQueue.queue.qsize()):
-    Thread(target=myQueue.job, args=(tread_id, )).start()
-
-myQueue.queue.join()
+    myQueue.queue.join()

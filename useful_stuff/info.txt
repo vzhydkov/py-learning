@@ -15,3 +15,5 @@
 </Directory>
 
 # CGI manual: CGI link: http://www.tutorialspoint.com/python/python_cgi_programming.htm
+
+# create .exe files: https://pypi.python.org/pypi/py2exe/0.9.2.0#using-the-builder
