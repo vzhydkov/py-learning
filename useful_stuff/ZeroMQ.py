@@ -56,8 +56,6 @@ myQueue.set_job(Publish())
 myQueue.set_job(Subscribe())
 
 for tread_id in range(myQueue.queue.qsize()):
-    tread = Thread(target=myQueue.job, args=(tread_id, ))
-    tread.daemon = True
-    tread.start()
+    Thread(target=myQueue.job, args=(tread_id, )).start()
 
 myQueue.queue.join()
