@@ -1,5 +1,5 @@
 # class C: pass
-# C = type('C', (), {})
+# class = type("classname", superclasses, attributedict)
 # NewType = type("NewType", (object,), {"x": "hello"})
 
 def with_metaclass(meta, *bases):
