@@ -40,15 +40,29 @@ def counter(func):
         return res
     return wrapper
 
-counter.count = {}
 
+def add_to_string(string):
+    def fn(fn):
+        def arg(*args, **kwargs):
+            return fn(*args, **kwargs) + string
+        return arg
+    return fn
 
-@benchmark
-@logging
-@counter
-def reverse_string(string):
-    return string[::-1]
-    #return ''.join(reversed(string))
+if __name__ == "__main__":
+    counter.count = {}
 
-###########################
-print(reverse_string('a b c'))
+    @benchmark
+    @logging
+    @counter
+    def reverse_string(string):
+        return string[::-1]
+        #return ''.join(reversed(string))
+
+    ###########################
+    print(reverse_string('a b c'))
+
+    @add_to_string(' World!')
+    def say(string):
+        return string
+
+    print(say('Hello'))
