@@ -5,10 +5,6 @@ import zmq
 import time
 from random import choice
 from threading import Thread
-try:
-    from Queue import Queue
-except ImportError:
-    from queue import Queue
 
 
 class Publish():
@@ -38,27 +34,7 @@ class Subscribe():
         while True:
             print('caught message: %s' % self.socket.recv())
 
-
-class MyQueue():
-    def __init__(self, queue):
-        self.queue = queue
-
-    def job(self, tread_id):
-        while not self.queue.empty():
-            print('Tread started: %s' % tread_id)
-            task = self.queue.get()
-            task.start()
-            self.queue.task_done()
-
-    def set_job(self, func):
-        self.queue.put(func)
-
 if __name__ == '__main__':
-    myQueue = MyQueue(Queue())
-    myQueue.set_job(Publish())
-    myQueue.set_job(Subscribe())
-
-    for tread_id in range(myQueue.queue.qsize()):
-        Thread(target=myQueue.job, args=(tread_id, )).start()
-
-    myQueue.queue.join()
+    for tread_id, task in enumerate((Publish, Subscribe)):
+        print('Tread started: %s' % tread_id)
+        Thread(target=task().start).start()
