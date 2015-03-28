@@ -1,4 +1,4 @@
-class Class:
+class Class(object):
     @classmethod
     def class_method(cls):
         print(cls, 'class_method')
@@ -22,7 +22,7 @@ instance.static_method()
 instance.instance_method()
 
 
-class C(object):
+class Property(object):
     """ property """
     def __init__(self):
         self._x = None
@@ -39,7 +39,7 @@ class C(object):
     x = property(getx, setx, delx, "I'm the 'x' property.")
 
 
-class C(object):
+class Decorator(object):
     """ decorators property """
     def __init__(self):
         self._x = None
