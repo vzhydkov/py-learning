@@ -1,3 +1,4 @@
+import time
 import functools
 
 
@@ -5,7 +6,6 @@ def benchmark(func):
     """
     Decorator time
     """
-    import time
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         t = time.clock()
@@ -32,6 +32,7 @@ def counter(func):
     Decorator counter
     """
     counter.count[func.__name__] = 0
+
     @functools.wraps(func)
     def wrapper(*args, **kwargs):
         counter.count[func.__name__] += 1
@@ -41,12 +42,21 @@ def counter(func):
     return wrapper
 
 
-def add_to_string(string):
-    def fn(fn):
-        def arg(*args, **kwargs):
-            return fn(*args, **kwargs) + string
-        return arg
-    return fn
+def timer(label='', trace=True):
+    def on_decorator(func):
+        @functools.wraps(func)
+        def on_call(*args, **kwargs):
+            start = time.clock()
+            result = func(*args, **kwargs)
+            elapsed = time.clock() - start
+            on_call.all_time += elapsed
+            if trace:
+                values = (label, func.__name__, elapsed, on_call.all_time)
+                print('Timer %s%s: %.5f, %.5f' % values)
+            return result
+        on_call.all_time = 0
+        return on_call
+    return on_decorator
 
 if __name__ == "__main__":
     counter.count = {}
@@ -54,15 +64,9 @@ if __name__ == "__main__":
     @benchmark
     @logging
     @counter
+    @timer()
     def reverse_string(string):
         return string[::-1]
-        #return ''.join(reversed(string))
+        # return ''.join(reversed(string))
 
-    ###########################
     print(reverse_string('a b c'))
-
-    @add_to_string(' World!')
-    def say(string):
-        return string
-
-    print(say('Hello'))

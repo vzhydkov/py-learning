@@ -26,12 +26,13 @@ class dec_no_args(object):
 
 
 class dec_with_args(object):
-    def __init__(self, arg):
+    def __init__(self, *args, **kwargs):
         """
         If there are decorator arguments, the function
         to be decorated is not passed to the constructor!
         """
-        self.arg = arg
+        self.dec_args = args
+        self.dec_kwargs = kwargs
 
     def __call__(self, fn):
         """
@@ -40,27 +41,31 @@ class dec_with_args(object):
         it a single argument, which is the function object.
         """
         @functools.wraps(fn)
-        def wrapper(*args):
-            fn(*args)
+        def wrapper(*args, **kwargs):
+            return fn(*args, **kwargs)
         return wrapper
 
 
 if __name__ == "__main__":
     class Class1(object):
         @dec_no_args
-        def f(self, arg):
-            return arg
+        def func1(self, *args, **kwargs):
+            return args, kwargs
 
     @dec_no_args
-    def func1(arg):
-        return arg
+    def func1(*args, **kwargs):
+        return args, kwargs
 
     class Class2(object):
         @dec_with_args('dec_arg')
-        def func2(self, arg):
-            return arg
+        def func2(self, *args, **kwargs):
+            return args, kwargs
 
-    @dec_with_args("dec_arg")
-    def func2(arg):
-        return arg
+    @dec_with_args('dec_arg')
+    def func2(*args, **kwargs):
+        return args, kwargs
+
+    # assert Class1().func1('arg') == func1('arg')
+    # assert Class2().func2('arg') == func2('arg')
+
 

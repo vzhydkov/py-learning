@@ -10,17 +10,6 @@ class Class(object):
     def instance_method(self):
         print(self, 'instance_method')
 
-instance = Class()
-
-Class.class_method()
-instance.class_method()
-
-Class.static_method()
-instance.static_method()
-
-# Class.instance_method()  # TypeError
-instance.instance_method()
-
 
 class Property(object):
     """ property """
@@ -56,3 +45,15 @@ class Decorator(object):
     @x.deleter
     def x(self):
         del self._x
+
+if __name__ == "__main__":
+    instance = Class()
+
+    Class.class_method()
+    instance.class_method()
+
+    Class.static_method()
+    instance.static_method()
+
+    # Class.instance_method()  # TypeError
+    instance.instance_method()
