@@ -65,7 +65,5 @@ if __name__ == "__main__":
     def func2(*args, **kwargs):
         return args, kwargs
 
-    # assert Class1().func1('arg') == func1('arg')
-    # assert Class2().func2('arg') == func2('arg')
-
-
+    assert Class1().func1('arg') == func1('arg')
+    assert Class2().func2('arg') == func2('arg')
