@@ -106,5 +106,3 @@ if __name__ == "__main__":
     print('Total orders: %d' % order.get_total_orders())
     print('Order date: %s' % order.date)
     print(order.get_files())
-
-
