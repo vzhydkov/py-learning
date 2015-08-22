@@ -1,7 +1,7 @@
 # !/usr/bin/env python
 # -*- coding: UTF-8 -*-
 
-import zmqпше
+import zmq
 import time
 from random import choice
 from threading import Thread
