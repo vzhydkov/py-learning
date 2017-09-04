@@ -1,9 +1,9 @@
 """
-A bubble sort, a selection sort, and an insertion sort are O(n2)O(n2) algorithms.
+A bubble sort, a selection sort, and an insertion sort are O(n**2) algorithms.
 A shell sort improves on the insertion sort by sorting incremental sublists.
-    It falls between O(n)O(n) and O(n2)O(n2).
-A merge sort is O(n log n)O(n log n), but requires additional space for the merging process.
-A quick sort is O(n log n)O(n log ⁡n), but may degrade to O(n2)O(n2)
+    It falls between O(n) and O(n**2).
+A merge sort is O(n log n), but requires additional space for the merging process.
+A quick sort is O(n log n), but may degrade to O(n**2)
     if the split points are not near the middle of the list. It does not require additional space.
 Links:
 http://interactivepython.org/runestone/static/pythonds/SortSearch/sorting.html
