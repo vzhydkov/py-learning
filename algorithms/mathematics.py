@@ -1,5 +1,5 @@
 def fibonacci(n):
-    """Return the sorted list
+    """
     >>> fibonacci(16)
     987
     """
@@ -10,7 +10,7 @@ def fibonacci(n):
 
 
 def fibonacci_recursion(n):
-    """Return the sorted list
+    """
     >>> fibonacci_recursion(16)
     987
     """
@@ -20,7 +20,7 @@ def fibonacci_recursion(n):
 
 
 def fibonacci_generator(n):
-    """Return the sorted list
+    """
     >>> list(fibonacci_generator(16))
     [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987]
     """
@@ -31,7 +31,7 @@ def fibonacci_generator(n):
 
 
 def factorial(n):
-    """Return the sorted list
+    """
     >>> factorial(16)
     20922789888000
     """
@@ -42,7 +42,7 @@ def factorial(n):
 
 
 def factorial_while(n):
-    """Return the sorted list
+    """
     >>> factorial(16)
     20922789888000
     """
@@ -54,7 +54,7 @@ def factorial_while(n):
 
 
 def factorial_recursion(n):
-    """Return the sorted list
+    """
     >>> factorial(16)
     20922789888000
     """
