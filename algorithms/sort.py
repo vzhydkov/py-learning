@@ -5,9 +5,6 @@ A shell sort improves on the insertion sort by sorting incremental sublists.
 A merge sort is O(n log n), but requires additional space for the merging process.
 A quick sort is O(n log n), but may degrade to O(n**2)
     if the split points are not near the middle of the list. It does not require additional space.
-Links:
-http://interactivepython.org/runestone/static/pythonds/SortSearch/sorting.html
-http://bigocheatsheet.com/
 """
 
 
