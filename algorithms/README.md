@@ -1,7 +1,7 @@
 # Big O Notation
 ```
      | Constant | Logarithmic |Linear | Linearithmic | Quadratic | Exponential | Factorial |
-N    | O(1)     | O(log(n))   | O(n)  | O(n*log(n))  | O(n**n)   | O(2**n)     | O(n!)     |
+N    | O(1)     | O(log n)    | O(n)  | O(n log n)   | O(n**n)   | O(2**n)     | O(n!)     |
 1    | 1        | 1           | 1     | 1            | 1         | 2           | 2         |
 4    | 1        | 2           | 4     | 8            | 16        | 16          | 24        |
 16   | 1        | 4           | 16    | 64           | 256       | 65536       | 16!       |
@@ -27,6 +27,6 @@ N    | O(1)     | O(log(n))   | O(n)  | O(n*log(n))  | O(n**n)   | O(2**n)     |
 
 ## Compare Quadratic to Linearithmic
 ```
-n**n / (n lg n) = n / lg n = 1,000,000 / lg(1,000,000)
+n**n / (n log n) = n / log n = 1,000,000 / lg(1,000,000)
 Since  2**20 is approximately 1 million, the ratio approximately 50,000
 ```
