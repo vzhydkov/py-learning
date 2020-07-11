@@ -9,7 +9,6 @@ N    | O(1)     | O(log(n))   | O(n)  | O(n log(n))  | O(n**n)   | O(2**n)     |
 ```
 
 # Sorting algorithms
-[sorting examples](sort.py)
 ```
 Algorithm      |             Time Complexity             | Space Complexity |
                | Best        | Average     | Worst       | Worst            |
@@ -22,6 +21,7 @@ Select Sort    | O(n**2)     | O(n**2)     | O(n**2)     | O(1)             |
 Bucket Sort    | O(n+k)      | O(n+k)      | O(n**2)     | O(nk)            |
 Radix Sort     | O(nk)       | O(nk)       | O(nk)       | O(n+k)           |
 ```
+[Sorting examples](sort.py)
 
 - **Constant** odd or even number or Look-up table (on average)
 - **Logarithmic** finding element on sorted array with binary search
