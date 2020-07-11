@@ -28,5 +28,5 @@ N    | O(1)     | O(log(n))   | O(n)  | O(n*log(n))  | O(n**n)   | O(2**n)     |
 ## Compare Quadratic to Linearithmic
 ```
 n**n / (n lg n) = n / lg n = 1,000,000 / lg(1,000,000)
-Since  2**20 is approximately 1 million, we obtain approximately 50,000
+Since  2**20 is approximately 1 million, the ratio approximately 50,000
 ```
