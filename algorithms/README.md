@@ -15,7 +15,7 @@ N    | O(1)     | O(log(n))   | O(n)  | O(n log(n))  | O(n**n)   | O(2**n)     |
 - **Exponential** find all subsets
 - **Factorial** find all permutations of a given set/string
 
-### Compare Quadratic to Linearithmic
+Compare Quadratic to Linearithmic
 ```
 n**n / (n log(n)) = n / log(n) = 1,000,000 / lg(1,000,000)
 Since  2**20 is approximately 1 million, the ratio approximately 50,000
