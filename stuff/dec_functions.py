@@ -70,7 +70,6 @@ if __name__ == "__main__":
         return fn_arg
 
     assert func1.__name__ == 'func1'
-    print('decorator1', func1('#fn_arg#'))
 
     @decorator2
     @decorator2(dec_arg='#dec_arg#')
@@ -78,7 +77,6 @@ if __name__ == "__main__":
         return fn_arg
 
     assert func2.__name__ == 'func2'
-    print('decorator2', func2('#fn_arg#'))
 
     @decorator3
     @decorator3(dec_arg='#dec_arg#')
@@ -86,6 +84,5 @@ if __name__ == "__main__":
         return fn_arg
 
     assert func3.__name__ == 'func3'
-    print('decorator3', func3('#fn_arg#'))
 
     assert func1('#fn_arg#') == func2('#fn_arg#') == func3('#fn_arg#')

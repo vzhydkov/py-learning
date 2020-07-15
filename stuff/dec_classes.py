@@ -1,7 +1,7 @@
 import functools
 
 
-class dec_no_args(object):
+class DecNoArgs(object):
     def __init__(self, fn):
         """
         If there are no decorator arguments, the function
@@ -25,7 +25,7 @@ class dec_no_args(object):
         return self.fn(*args, **kw)
 
 
-class dec_with_args(object):
+class DecWithArgs(object):
     def __init__(self, *args, **kwargs):
         """
         If there are decorator arguments, the function
@@ -48,20 +48,20 @@ class dec_with_args(object):
 
 if __name__ == "__main__":
     class Class1(object):
-        @dec_no_args
+        @DecNoArgs
         def func1(self, *args, **kwargs):
             return args, kwargs
 
-    @dec_no_args
+    @DecNoArgs
     def func1(*args, **kwargs):
         return args, kwargs
 
     class Class2(object):
-        @dec_with_args('dec_arg')
+        @DecWithArgs('dec_arg')
         def func2(self, *args, **kwargs):
             return args, kwargs
 
-    @dec_with_args('dec_arg')
+    @DecWithArgs('dec_arg')
     def func2(*args, **kwargs):
         return args, kwargs
 
