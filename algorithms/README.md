@@ -34,5 +34,5 @@ Select Sort    | O(n**2)     | O(n**2)     | O(n**2)     | O(1)             |
 Bucket Sort    | O(n+k)      | O(n+k)      | O(n**2)     | O(nk)            |
 Radix Sort     | O(nk)       | O(nk)       | O(nk)       | O(n+k)           |
 ```
-[Sorting examples](sort.py)
+[Sorting](sort.py) and [mathematical](math.py) examples
 
