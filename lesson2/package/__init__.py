@@ -1,1 +1,0 @@
-__author__  = "Vitaliy Zhidkov <vzhidkov@envionsoftware.com>"

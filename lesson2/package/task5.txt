@@ -1,2 +1,0 @@
-PHP was conceived in the late 1980s.
-Van Rossum is PHP's principal author.
