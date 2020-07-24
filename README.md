@@ -1,1 +1,1 @@
-![Learn Python](dip.png)
+![Learn Python](index.png)
