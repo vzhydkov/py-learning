@@ -30,6 +30,22 @@ def fibonacci_generator(n):
         a, b = b, a+b
 
 
+def fibonacci_memoization(n, memo={}):
+    """
+    >>> fibonacci_memoization(16)
+    987
+    """
+    if n in memo:
+        ans = memo[n]
+    elif n <= 2:
+        ans = 1
+        memo[n] = ans
+    else:
+        ans = fibonacci_memoization(n - 2) + fibonacci_memoization(n - 1)
+        memo[n] = ans
+    return ans
+
+
 def factorial(n):
     """
     >>> factorial(16)
@@ -62,6 +78,7 @@ def factorial_recursion(n):
         return 1
     else:
         return n * factorial(n-1)
+
 
 if __name__ == "__main__":
     import doctest
