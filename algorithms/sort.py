@@ -5,9 +5,8 @@ def bubble_sort(lst):
     >>> lst == [17, 20, 26, 31, 44, 54, 55, 77, 93]
     True
     """
-    l = len(lst)
-    for a in range(1, l):
-        for b in range(l-1):
+    for a in range(1, len(lst)):
+        for b in range(len(lst)-1):
             if lst[a] < lst[b]:
                 lst[a], lst[b] = lst[b], lst[a]
 
