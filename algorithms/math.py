@@ -38,12 +38,12 @@ def fibonacci_generator(n):
 
 def fibonacci_memoization(n, memo={}):
     """
+    Best approach:
+    Time complexity: O(n)
+    Space complexity: O(n)
     >>> fibonacci_memoization(16)
     987
     """
-    # Best approach:
-    # Time complexity: O(n)
-    # Space complexity: O(n)
     if n <= 0:
         return 0
     if n == 1:
