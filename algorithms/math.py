@@ -1,8 +1,10 @@
-def fibonacci(n):
+def fibonacci_loop(n):
     """
-    >>> fibonacci(16)
+    >>> fibonacci_loop(16)
     987
     """
+    if n <= 0:
+        return 0
     a, b = 1, 1
     for i in range(n-1):
         a, b = b, a+b
@@ -14,6 +16,8 @@ def fibonacci_recursion(n):
     >>> fibonacci_recursion(16)
     987
     """
+    if n <= 0:
+        return 0
     if n == 1 or n == 2:
         return 1
     return fibonacci_recursion(n-1) + fibonacci_recursion(n-2)
@@ -21,9 +25,11 @@ def fibonacci_recursion(n):
 
 def fibonacci_generator(n):
     """
-    >>> list(fibonacci_generator(16))
-    [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987]
+    >>> list(fibonacci_generator(16))[-1]
+    987
     """
+    if n <= 0:
+        yield 0
     a = b = 1
     for i in range(n):
         yield a
@@ -35,22 +41,25 @@ def fibonacci_memoization(n, memo={}):
     >>> fibonacci_memoization(16)
     987
     """
-    if n in memo:
-        ans = memo[n]
-    elif n <= 2:
-        ans = 1
-        memo[n] = ans
-    else:
-        ans = fibonacci_memoization(n - 2) + fibonacci_memoization(n - 1)
-        memo[n] = ans
-    return ans
+    # Best approach:
+    # Time complexity: O(n)
+    # Space complexity: O(n)
+    if n <= 0:
+        return 0
+    if n == 1:
+        return 1
+    if not memo.get(n):
+        memo[n] = fibonacci_memoization(n - 2) + fibonacci_memoization(n - 1)
+    return memo[n]
 
 
-def factorial(n):
+def factorial_loop(n):
     """
-    >>> factorial(16)
+    >>> factorial_loop(16)
     20922789888000
     """
+    if n < 0:
+        raise Exception('must be greater than or equal to zero')
     res = 1
     for i in range(2, n+1):
         res *= i
@@ -59,9 +68,11 @@ def factorial(n):
 
 def factorial_while(n):
     """
-    >>> factorial(16)
+    >>> factorial_while(16)
     20922789888000
     """
+    if n < 0:
+        raise Exception('must be greater than or equal to zero')
     res = 1
     while n >= 1:
         res = res * n
@@ -71,13 +82,27 @@ def factorial_while(n):
 
 def factorial_recursion(n):
     """
-    >>> factorial(16)
+    >>> factorial_recursion(16)
     20922789888000
     """
+    if n < 0:
+        raise Exception('must be greater than or equal to zero')
     if n == 0:
         return 1
-    else:
-        return n * factorial(n-1)
+    return n * factorial_recursion(n-1)
+
+
+def factorial_generator(n):
+    """
+    >>> list(factorial_generator(16))[-1]
+    20922789888000
+    """
+    if n < 0:
+        raise Exception('must be greater than or equal to zero')
+    res = 1
+    for i in range(2, n+1):
+        res *= i
+        yield res
 
 
 if __name__ == "__main__":
