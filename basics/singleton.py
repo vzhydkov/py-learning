@@ -44,14 +44,6 @@ class SingletonDecorator:
 
 
 if __name__ == '__main__':
-    a = SingletonMeta()
-    b = SingletonMeta()
-    assert a is b
-
-    a = SingletonClass()
-    b = SingletonClass()
-    assert a is b
-
-    a = SingletonDecorator()
-    b = SingletonDecorator()
-    assert a is b
+    assert SingletonMeta() is SingletonMeta()
+    assert SingletonClass is SingletonClass
+    assert SingletonDecorator() is SingletonDecorator()
