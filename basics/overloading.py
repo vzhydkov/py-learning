@@ -51,4 +51,4 @@ class Overloading(object):
         return object.__getattribute__(self, name)
 
     def __call__(self, *args, **kwargs):  # x()
-        return super(Overloading, self).__call__(*args, **kwargs)
+        return args, kwargs
