@@ -20,7 +20,6 @@ Compare Quadratic to Linearithmic
 n**n / (n log(n)) = n / log(n) = 1,000,000 / lg(1,000,000)
 Since  2**20 is approximately 1 million, the ratio approximately 50,000
 ```
-
 # Sorting algorithms
 ```
 Algorithm      |             Time Complexity             | Space Complexity |
@@ -35,7 +34,6 @@ Bucket Sort    | O(n+k)      | O(n+k)      | O(n**2)     | O(nk)            |
 Radix Sort     | O(nk)       | O(nk)       | O(nk)       | O(n+k)           |
 ```
 [Sorting](sort.py) and [mathematical](math.py) examples
-
 # Graphs
 ### BFS vs DFS (for Binary Tree)
 BFS starts visiting nodes from root while DFS starts visiting nodes from leaves. So if our problem is to search something that is more likely to closer to root, we would prefer BFS. And if the target node is close to a leaf, we would prefer DFS.
@@ -63,3 +61,23 @@ Space Complexity:
 - Extra Space required for Depth First Traversals is O(h) where h is maximum height of Binary Tree. In Depth First Traversals, stack (or function call stack) stores all ancestors of a node.
 
 [Graph](graph.py) examples
+# Hash table
+### Separate chaining vs linear probing
+Separate chaining
+- Easier to implement delete
+- Performance degrades gracefully
+- Clustering less sensitive to poorly-designed hash function
+
+Linear probing
+- Less wasted space
+- Better cache performance
+### Hash table vs balanced search trees
+Hash tables
+- Simpler to code
+- No effective alternative for unordered keys
+- Faster for simple keys (a few arithmetic ops versus log N compares)
+
+Balanced search trees
+- Stronger performance guarantee
+- Support for ordered ST operations
+- Easier to implement compareTo() correctly than equals() and hashCode()
