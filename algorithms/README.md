@@ -35,6 +35,7 @@ Radix Sort     | O(nk)       | O(nk)       | O(nk)       | O(n+k)           |
 ```
 [Sorting](sort.py) and [mathematical](math.py) examples
 # Graph
+# Tree
 ### BFS vs DFS (for Binary Tree)
 BFS starts visiting nodes from root while DFS starts visiting nodes from leaves. So if our problem is to search something that is more likely to closer to root, we would prefer BFS. And if the target node is close to a leaf, we would prefer DFS.
 
@@ -60,7 +61,7 @@ Space Complexity:
 - Extra Space required for Level Order Traversal is O(w) where w is maximum width of Binary Tree. In level order traversal, queue one by one stores nodes of different level.
 - Extra Space required for Depth First Traversals is O(h) where h is maximum height of Binary Tree. In Depth First Traversals, stack (or function call stack) stores all ancestors of a node.
 
-[Graph](graph.py) examples
+[Tree](tree.py) examples
 # Hash Table
 ### Separate chaining vs linear probing
 Separate chaining
