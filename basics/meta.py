@@ -1,6 +1,8 @@
-# class C: pass
-# class = type("classname", superclasses, attributedict)
-# NewType = type("NewType", (object,), {"x": "hello"})
+"""
+class C: pass
+class = type("classname", superclasses, attributedict)
+NewType = type("NewType", (object,), {"x": "hello"})
+"""
 
 
 def with_metaclass(meta, *bases):
@@ -26,13 +28,14 @@ def meta_func(name, bases, attrs):
     return type(name, bases, attrs)
 
 
-class Spam(with_metaclass(Meta, object)):
+class NewClass(with_metaclass(Meta, object)):
     def __new__(cls, *args, **kwargs):
-        return super(Spam, cls).__new__(cls, *args, **kwargs)
+        return super(NewClass, cls).__new__(cls, *args, **kwargs)
 
     def __init__(self):
         pass
 
 
 if __name__ == '__main__':
-    spam = Spam()
+    NewClass()
+

@@ -9,13 +9,13 @@ class DecNoArgs(object):
         """
         self.fn = fn
 
-    def __get__(self, obj, type=None):
+    def __get__(self, obj, tp=None):
         """
         self.__class__.__name__ will give you the name of the class,
         but you can also use descriptors to accomplish this
         in a somewhat more general way.
         """
-        return self.__class__(self.fn.__get__(obj, type))
+        return self.__class__(self.fn.__get__(obj, tp))
 
     def __call__(self, *args, **kw):
         """

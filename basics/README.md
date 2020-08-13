@@ -1,12 +1,10 @@
 # Built-in features
 ### Examples
-- [Asynchronous iterator](asynchronous.py)
 - [Class decorator](dec_classes.py)
 - [Function decorator](dec_functions.py)
 - [Metaclass](meta.py)
 - [Overloading](overloading.py)
 - [Signleton](singleton.py)
-
 ### Regular Expressions
 - a, X, 9, < -- ordinary characters just match themselves exactly. The meta-characters which do not match themselves because they have special meanings are: . ^ $ * + ? { [ ] \ | ( ) (details below)
 - . (a period) -- matches any single character except newline '\n'
