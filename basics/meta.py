@@ -24,18 +24,5 @@ class Meta(type):
         # return super(Meta, cls).__call__(*args, **kwargs)
 
 
-def meta_func(name, bases, attrs):
-    return type(name, bases, attrs)
-
-
 class NewClass(with_metaclass(Meta, object)):
-    def __new__(cls, *args, **kwargs):
-        return super(NewClass, cls).__new__(cls, *args, **kwargs)
-
-    def __init__(self):
-        pass
-
-
-if __name__ == '__main__':
-    NewClass()
-
+    pass
