@@ -42,7 +42,7 @@ class DecWithArgs(object):
         """
         @functools.wraps(fn)
         def wrapper(*args, **kwargs):
-            return fn(*args, **kwargs)
+            return self.dec_args + fn(*args, **kwargs)
         return wrapper
 
 
