@@ -49,7 +49,7 @@ def fibonacci_memoization(n, memo={}):
     if n == 1:
         return 1
     if not memo.get(n):
-        memo[n] = fibonacci_memoization(n - 2) + fibonacci_memoization(n - 1)
+        memo[n] = fibonacci_memoization(n - 1) + fibonacci_memoization(n - 2)
     return memo[n]
 
 
