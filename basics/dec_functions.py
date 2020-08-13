@@ -14,14 +14,14 @@ def decorator1(fn_or_dec_arg):
         # in this case fn_or_dec_arg is original function
         @functools.wraps(fn_or_dec_arg)
         def wrapper(*args, **kwargs):
-            return '#dec#' + fn_or_dec_arg(*args, **kwargs)
+            return fn_or_dec_arg(*args, **kwargs)
         return wrapper
     else:
         # in this case fn_or_dec_arg in decorator argument
         def fn_wrapper(fn):
             @functools.wraps(fn)
             def wrapper(*args, **kwargs):
-                return '#dec#' + fn_or_dec_arg + fn(*args, **kwargs)
+                return fn_or_dec_arg + fn(*args, **kwargs)
             return wrapper
         return fn_wrapper
 
@@ -35,7 +35,7 @@ def decorator2(fn=None, dec_arg=''):
     def fn_wrapper(fn):
         @functools.wraps(fn)
         def wrapper(*args, **kwargs):
-            return '#dec#' + dec_arg + fn(*args, **kwargs)
+            return dec_arg + fn(*args, **kwargs)
         return wrapper
     if fn is not None:
         return fn_wrapper(fn)
@@ -53,7 +53,7 @@ def decorator3(fn=None, dec_arg=''):
 
     @functools.wraps(fn)
     def wrapper(*args, **kwargs):
-        return '#dec#' + dec_arg + fn(*args, **kwargs)
+        return dec_arg + fn(*args, **kwargs)
     return wrapper
 
 
@@ -69,20 +69,14 @@ if __name__ == "__main__":
     def func1(fn_arg):
         return fn_arg
 
-    assert func1.__name__ == 'func1'
-
     @decorator2
     @decorator2(dec_arg='#dec_arg#')
     def func2(fn_arg):
         return fn_arg
 
-    assert func2.__name__ == 'func2'
-
     @decorator3
     @decorator3(dec_arg='#dec_arg#')
     def func3(fn_arg):
         return fn_arg
-
-    assert func3.__name__ == 'func3'
 
     assert func1('#fn_arg#') == func2('#fn_arg#') == func3('#fn_arg#')
