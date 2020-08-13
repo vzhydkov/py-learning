@@ -1,4 +1,4 @@
-# Algorithms and Data Structures
+# Algorithms and Data Structures using Python
 - [Big O Notation](algorithms#big-o-notation)
 - [Sorting](algorithms#sorting)
 - [Graph](algorithms#graph)
