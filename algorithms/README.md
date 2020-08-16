@@ -36,7 +36,7 @@ Radix Sort     | O(nk)       | O(nk)       | O(nk)       | O(n+k)           |
 [Sorting](sort.py) examples
 # Graph
 # Tree
-### BFS vs DFS (for Binary Tree)
+### Tree Traversals: BFS vs DFS
 BFS starts visiting nodes from root while DFS starts visiting nodes from leaves. So if our problem is to search something that is more likely to closer to root, we would prefer BFS. And if the target node is close to a leaf, we would prefer DFS.
 
 DFS stands for Depth First Search is a edge based technique. It uses the Stack data structure, performs two stages, first visited vertices are pushed into stack and second if there is no vertices then visited vertices are popped.
@@ -83,6 +83,10 @@ Balanced search trees
 - Support for ordered ST operations
 - Easier to implement compareTo() correctly than equals() and hashCode()
 # Dynamic Programming
+There are two key attributes that a problem must have in order for dynamic programming to be applicable: optimal substructure and overlapping sub-problems. If a problem can be solved by combining optimal solutions to non-overlapping sub-problems, the strategy is called "divide and conquer" instead.
+
 [Fibonacci memoization](math.py#L45) example
-# Divide And Conquer algorithm
+# Divide And Conquer
+Technique is the basis of efficient algorithms for all kinds of problems, such as sorting (e.g., quicksort, merge sort), multiplying large numbers (e.g. the Karatsuba algorithm), finding the closest pair of points, syntactic analysis (e.g., top-down parsers), and computing the discrete Fourier transform.
+
 [Fibonacci fast doubling](math.py#L64) example
