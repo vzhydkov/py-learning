@@ -33,7 +33,7 @@ Select Sort    | O(n**2)     | O(n**2)     | O(n**2)     | O(1)             |
 Bucket Sort    | O(n+k)      | O(n+k)      | O(n**2)     | O(nk)            |
 Radix Sort     | O(nk)       | O(nk)       | O(nk)       | O(n+k)           |
 ```
-[Sorting](sort.py) and [mathematical](math.py) examples
+[Sorting](sort.py) examples
 # Graph
 # Tree
 ### BFS vs DFS (for Binary Tree)
@@ -82,3 +82,7 @@ Balanced search trees
 - Stronger performance guarantee
 - Support for ordered ST operations
 - Easier to implement compareTo() correctly than equals() and hashCode()
+# Dynamic Programming
+[Fibonacci memoization](math.py#L45) example
+# Divide And Conquer algorithm
+[Fibonacci fast doubling](math.py#L64) example

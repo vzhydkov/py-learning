@@ -3,7 +3,9 @@ def fibonacci_loop(n):
     >>> fibonacci_loop(16)
     987
     """
-    if n <= 0:
+    if n < 0:
+        raise ValueError('Negative arguments not implemented')
+    if n == 0:
         return 0
     a, b = 1, 1
     for i in range(n-1):
@@ -16,7 +18,9 @@ def fibonacci_generator(n):
     >>> list(fibonacci_generator(16))[-1]
     987
     """
-    if n <= 0:
+    if n < 0:
+        raise ValueError('Negative arguments not implemented')
+    if n == 0:
         yield 0
     a = b = 1
     for i in range(n):
@@ -29,7 +33,9 @@ def fibonacci_recursion(n):
     >>> fibonacci_recursion(16)
     987
     """
-    if n <= 0:
+    if n < 0:
+        raise ValueError('Negative arguments not implemented')
+    if n == 0:
         return 0
     if n == 1 or n == 2:
         return 1
@@ -38,13 +44,15 @@ def fibonacci_recursion(n):
 
 def fibonacci_memoization(n, memo={}):
     """
-    Best approach:
+    Dynamic Programming
     Time complexity: O(n)
     Space complexity: O(n)
     >>> fibonacci_memoization(16)
     987
     """
-    if n <= 0:
+    if n < 0:
+        raise ValueError('Negative arguments not implemented')
+    if n == 0:
         return 0
     if n == 1 or n == 2:
         return 1
@@ -53,13 +61,36 @@ def fibonacci_memoization(n, memo={}):
     return memo[n]
 
 
+def fibonacci_fast_doubling(n):
+    """
+    Divide-and-conquer algorithm
+    Time complexity: O(log(n))
+    >>> fibonacci_fast_doubling(16)
+    987
+    """
+    def _fibonacci(n):
+        if n == 0:
+            return 0, 1
+        else:
+            a, b = _fibonacci(n // 2)
+            c = a * (b * 2 - a)
+            d = a * a + b * b
+            if n % 2 == 0:
+                return c, d
+            else:
+                return d, c + d
+    if n < 0:
+        raise ValueError('Negative arguments not implemented')
+    return _fibonacci(n)[0]
+
+
 def factorial_loop(n):
     """
     >>> factorial_loop(16)
     20922789888000
     """
     if n < 0:
-        raise Exception('must be greater than or equal to zero')
+        raise Exception('Must be greater than or equal to zero')
     res = 1
     for i in range(2, n+1):
         res *= i
@@ -72,7 +103,7 @@ def factorial_generator(n):
     20922789888000
     """
     if n < 0:
-        raise Exception('must be greater than or equal to zero')
+        raise Exception('Must be greater than or equal to zero')
     res = 1
     for i in range(2, n+1):
         res *= i
@@ -85,7 +116,7 @@ def factorial_while(n):
     20922789888000
     """
     if n < 0:
-        raise Exception('must be greater than or equal to zero')
+        raise Exception('Must be greater than or equal to zero')
     res = 1
     while n >= 1:
         res = res * n
@@ -99,7 +130,7 @@ def factorial_recursion(n):
     20922789888000
     """
     if n < 0:
-        raise Exception('must be greater than or equal to zero')
+        raise Exception('Must be greater than or equal to zero')
     if n == 0:
         return 1
     return n * factorial_recursion(n-1)
