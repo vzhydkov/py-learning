@@ -6,5 +6,6 @@
 - [Hash Table](algorithms#hash-table)
 - [Dynamic Programming](algorithms#dynamic-programming)
 - [Divide And Conquer](algorithms#divide-and-conquer)
+- [Python built-in features](basics#built-in-features)
 
 ![Learn Python](index.png)
