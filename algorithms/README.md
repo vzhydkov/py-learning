@@ -1,11 +1,14 @@
 # Big O Notation
 ```
-     | Constant | Logarithmic |Linear | Linearithmic | Quadratic | Exponential | Factorial |
-N    | O(1)     | O(log(n))   | O(n)  | O(n log(n))  | O(n**n)   | O(2**n)     | O(n!)     |
-1    | 1        | 1           | 1     | 1            | 1         | 2           | 2         |
-4    | 1        | 2           | 4     | 8            | 16        | 16          | 24        |
-16   | 1        | 4           | 16    | 64           | 256       | 65536       | 16!       |
-1024 | 1        | 10          | 1024  | 10240        | 1048576   | 2**1024     | 1024!     |
++------+----------+-------------+-------+--------------+-----------+-------------+-----------+
+|      | Constant | Logarithmic |Linear | Linearithmic | Quadratic | Exponential | Factorial |
++------+----------+-------------+-------+--------------+-----------+-------------+-----------+
+| N    | O(1)     | O(log(n))   | O(n)  | O(n log(n))  | O(n**n)   | O(2**n)     | O(n!)     |
+| 1    | 1        | 1           | 1     | 1            | 1         | 2           | 2         |
+| 4    | 1        | 2           | 4     | 8            | 16        | 16          | 24        |
+| 16   | 1        | 4           | 16    | 64           | 256       | 65536       | 16!       |
+| 1024 | 1        | 10          | 1024  | 10240        | 1048576   | 2**1024     | 1024!     |
++------+----------+-------------+-------+--------------+-----------+-------------+-----------+
 ```
 - **Constant** odd or even number or Look-up table (on average)
 - **Logarithmic** finding element on sorted array with binary search
@@ -20,20 +23,44 @@ Compare Quadratic to Linearithmic
 n**n / (n log(n)) = n / log(n) = 1,000,000 / lg(1,000,000)
 Since  2**20 is approximately 1 million, the ratio approximately 50,000
 ```
-# Sorting
+### Sorting
 ```
-Algorithm      |             Time Complexity             | Space Complexity |
-               | Best        | Average     | Worst       | Worst            |
-Quicksort      | O(n log(n)) | O(n log(n)) | O(n**2)     | O(n)             |
-Mergesort      | O(n log(n)) | O(n log(n)) | O(n log(n)) | O(n)             |
-Heapsort       | O(n log(n)) | O(n log(n)) | O(n log(n)) | O(1)             |
-Bubble Sort    | O(n)        | O(n**2)     | O(n**2)     | O(1)             |
-Insertion Sort | O(n)        | O(n**2)     | O(n**2)     | O(1)             |
-Select Sort    | O(n**2)     | O(n**2)     | O(n**2)     | O(1)             |
-Bucket Sort    | O(n+k)      | O(n+k)      | O(n**2)     | O(nk)            |
-Radix Sort     | O(nk)       | O(nk)       | O(nk)       | O(n+k)           |
++----------------+-----------------------------------------+-------------+
+|                |             Time Complexity             | Space usage |
+|   Algorithm    |-------------+-------------+-------------+-------------+
+|                | Best        | Average     | Worst       | Worst       |
++----------------+-------------+-------------+-------------+-------------+
+| Quicksort      | O(n log(n)) | O(n log(n)) | O(n**2)     | O(n)        |
+| Mergesort      | O(n log(n)) | O(n log(n)) | O(n log(n)) | O(n)        |
+| Heapsort       | O(n log(n)) | O(n log(n)) | O(n log(n)) | O(1)        |
+| Bubble Sort    | O(n)        | O(n**2)     | O(n**2)     | O(1)        |
+| Insertion Sort | O(n)        | O(n**2)     | O(n**2)     | O(1)        |
+| Select Sort    | O(n**2)     | O(n**2)     | O(n**2)     | O(1)        |
+| Bucket Sort    | O(n+k)      | O(n+k)      | O(n**2)     | O(nk)       |
+| Radix Sort     | O(nk)       | O(nk)       | O(nk)       | O(n+k)      |
++----------------+-------------+-------------+-------------+-------------+
 ```
 [Sorting](sort.py) examples
+### Data Structure
+```
++----------------------+----------+------------+----------+-------------+
+|                      |         Time Complexity          |             |
+|   Data Structure     |----------+------------+----------| Space usage |
+|                      |  Insert  |   Delete   |  Search  |             |
++----------------------+----------+------------+----------+-------------+
+| Unsorted array       | O(1)     | O(1)       | O(n)     | O(n)        |
+| Value-indexed array  | O(1)     | O(1)       | O(1)     | O(n)        |
+| Sorted array         | O(n)     | O(n)       | O(log n) | O(n)        |
+| Unsorted linked list | O(1)*    | O(1)*      | O(n)     | O(n)        |
+| Sorted linked list   | O(n)*    | O(1)*      | O(n)     | O(n)        |
+| Balanced binary tree | O(log n) | O(log n)   | O(log n) | O(n)        |
+| Heap                 | O(log n) | O(log n)** | O(n)     | O(n)        |
+| Hash table           | O(1)     | O(1)       | O(1)     | O(n)        |
++----------------------+----------+------------+----------+-------------+
+```
+`*` The cost to add or delete an element into a known location in the list (i.e. if you have an iterator to the location) is O(1). If you don't know the location, then you need to traverse the list to the location of deletion/insertion, which takes O(n) time.
+
+`**` The deletion cost is O(log n) for the minimum or maximum, O(n) for an arbitrary element.
 # Graph
 # Tree
 ### Tree Traversals: BFS vs DFS
@@ -57,7 +84,7 @@ Depth First Traversals
 
 Time Complexity: O(n)
 
-Space Complexity:
+Space usage:
 - Extra Space required for Level Order Traversal is O(w) where w is maximum width of Binary Tree. In level order traversal, queue one by one stores nodes of different level.
 - Extra Space required for Depth First Traversals is O(h) where h is maximum height of Binary Tree. In Depth First Traversals, stack (or function call stack) stores all ancestors of a node.
 
