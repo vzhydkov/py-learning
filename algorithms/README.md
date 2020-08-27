@@ -109,6 +109,30 @@ Balanced search trees
 - Stronger performance guarantee
 - Support for ordered ST operations
 - Easier to implement compareTo() correctly than equals() and hashCode()
+# List
+### Singly linked list vs Doubly linked list
+Complexity
+- In singly linked list the complexity of insertion and deletion at a known position is O(n)
+- In case od doubly linked list the complexity of insertion and deletion at a known position is O(1)
+
+Implementation
+- In singly linked list implementation is such as where the node contains some data and a pointer to the next node in the list
+- While doubly linked list has some more complex implementation where the node contains some data and a pointer to the next as well as the previous node in the list
+Order of elements
+- Singly linked list allows traversal elements only in one way
+- Doubly linked list allows element two way traversal
+
+Usage
+- Singly linked list are generally used for implementation of stacks
+- On other hand doubly linked list can be used to implement stacks as well as heaps and binary trees
+
+Index performance
+- Singly linked list is preferred when we need to save memory and searching is not required as pointer of single index is stored
+- If we need better performance while searching and memory is not a limitation in this case doubly linked list is more preferred
+
+Memory consumption
+- As singly linked list store pointer of only one node so consumes lesser memory
+- On other hand Doubly linked list uses more memory per node(two pointers)
 # Dynamic Programming
 There are two key attributes that a problem must have in order for dynamic programming to be applicable: optimal substructure and overlapping sub-problems. If a problem can be solved by combining optimal solutions to non-overlapping sub-problems, the strategy is called "divide and conquer" instead.
 
