@@ -45,7 +45,8 @@ def max_depth_bfs(root: Node) -> int:
     depth = 0
     for (node, level) in queue:
         depth = level
-        queue += [(child, level+1) for child in node.children]
+        for child in node.children:
+            queue.append((child, level+1))
     return depth
 
 
