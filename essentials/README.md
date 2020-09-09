@@ -23,7 +23,8 @@ Compare Quadratic to Linearithmic
 n**n / (n log(n)) = n / log(n) = 1,000,000 / lg(1,000,000)
 Since  2**20 is approximately 1 million, the ratio approximately 50,000
 ```
-### Sorting
+# Algorithms
+## Sorting
 ```
 +----------------+-----------------------------------------+-------------+
 |                |             Time Complexity             | Space usage |
@@ -41,7 +42,15 @@ Since  2**20 is approximately 1 million, the ratio approximately 50,000
 +----------------+-------------+-------------+-------------+-------------+
 ```
 [Sorting](sort.py) examples
-### Data Structure
+## Dynamic Programming
+There are two key attributes that a problem must have in order for dynamic programming to be applicable: optimal substructure and overlapping sub-problems. If a problem can be solved by combining optimal solutions to non-overlapping sub-problems, the strategy is called "divide and conquer" instead.
+
+[Fibonacci memoization](math.py#L45) example
+## Divide And Conquer
+Technique is the basis of efficient algorithms for all kinds of problems, such as sorting (e.g., quicksort, merge sort), multiplying large numbers (e.g. the Karatsuba algorithm), finding the closest pair of points, syntactic analysis (e.g., top-down parsers), and computing the discrete Fourier transform.
+
+[Fibonacci fast doubling](math.py#L64) and [multiply by Karatsuba algorithm](math.py#L139) examples
+# Data structures
 ```
 +----------------------+----------+------------+----------+-------------+
 |                      |         Time Complexity          |             |
@@ -61,8 +70,8 @@ Since  2**20 is approximately 1 million, the ratio approximately 50,000
 `*` The cost to add or delete an element into a known location in the list (i.e. if you have an iterator to the location) is O(1). If you don't know the location, then you need to traverse the list to the location of deletion/insertion, which takes O(n) time.
 
 `**` The deletion cost is O(log n) for the minimum or maximum, O(n) for an arbitrary element.
-# Graph
-# Tree
+## Graph
+## Tree
 ### Tree Traversals: BFS vs DFS
 BFS starts visiting nodes from root while DFS starts visiting nodes from leaves. So if our problem is to search something that is more likely to closer to root, we would prefer BFS. And if the target node is close to a leaf, we would prefer DFS.
 
@@ -89,7 +98,7 @@ Space usage:
 - Extra Space required for Depth First Traversals is O(h) where h is maximum height of Binary Tree. In Depth First Traversals, stack (or function call stack) stores all ancestors of a node.
 
 [Tree](tree.py) examples
-# Hash Table
+## Hash Table
 ### Separate chaining vs linear probing
 Separate chaining
 - Easier to implement delete
@@ -109,7 +118,7 @@ Balanced search trees
 - Stronger performance guarantee
 - Support for ordered ST operations
 - Easier to implement compareTo() correctly than equals() and hashCode()
-# List
+## List
 ### Singly linked list vs Doubly linked list
 Complexity
 - In singly linked list the complexity of insertion and deletion at a known position is O(n)
@@ -133,11 +142,3 @@ Index performance
 Memory consumption
 - As singly linked list store pointer of only one node so consumes lesser memory
 - On other hand Doubly linked list uses more memory per node(two pointers)
-# Dynamic Programming
-There are two key attributes that a problem must have in order for dynamic programming to be applicable: optimal substructure and overlapping sub-problems. If a problem can be solved by combining optimal solutions to non-overlapping sub-problems, the strategy is called "divide and conquer" instead.
-
-[Fibonacci memoization](math.py#L45) example
-# Divide And Conquer
-Technique is the basis of efficient algorithms for all kinds of problems, such as sorting (e.g., quicksort, merge sort), multiplying large numbers (e.g. the Karatsuba algorithm), finding the closest pair of points, syntactic analysis (e.g., top-down parsers), and computing the discrete Fourier transform.
-
-[Fibonacci fast doubling](math.py#L64) and [multiply by Karatsuba algorithm](math.py#L139) examples

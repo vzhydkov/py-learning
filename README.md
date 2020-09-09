@@ -1,11 +1,14 @@
-# Algorithms and Data Structures using Python
-- [Big O Notation](algorithms#big-o-notation)
-- [Graph](algorithms#graph)
-- [Tree](algorithms#tree)
-- [Hash Table](algorithms#hash-table)
-- [List](algorithms#list)
-- [Dynamic Programming](algorithms#dynamic-programming)
-- [Divide And Conquer](algorithms#divide-and-conquer)
+# Computer Science essentials using Python
+- [Big O Notation](essentials#big-o-notation)
+- [Algorithms](essentials#algorithms)
+    - [Sorting](essentials#sorting)
+    - [Dynamic Programming](essentials#dynamic-programming)
+    - [Divide And Conquer](essentials#divide-and-conquer)
+- [Data Structures](essentials#data-structures)
+    - [Graph](essentials#graph)
+    - [Tree](essentials#tree)
+    - [Hash Table](essentials#hash-table)
+    - [List](essentials#list)
 - [Python built-in features](basics#built-in-features)
 
 ![Learn Python](index.png)
