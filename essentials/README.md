@@ -45,11 +45,11 @@ Since  2**20 is approximately 1 million, the ratio approximately 50,000
 ## Dynamic Programming
 There are two key attributes that a problem must have in order for dynamic programming to be applicable: optimal substructure and overlapping sub-problems. If a problem can be solved by combining optimal solutions to non-overlapping sub-problems, the strategy is called "divide and conquer" instead.
 
-[Fibonacci memoization](math.py#L45) example
+[Fibonacci memoization](fibonacci.py#L45) example
 ## Divide And Conquer
 Technique is the basis of efficient algorithms for all kinds of problems, such as sorting (e.g., quicksort, merge sort), multiplying large numbers (e.g. the Karatsuba algorithm), finding the closest pair of points, syntactic analysis (e.g., top-down parsers), and computing the discrete Fourier transform.
 
-[Fibonacci fast doubling](math.py#L64) and [multiply by Karatsuba algorithm](math.py#L139) examples
+[Fibonacci fast doubling](fibonacci.py#L64) and [multiply by Karatsuba algorithm](math.py#L1) examples
 # Data structures
 ```
 +----------------------+----------+------------+----------+-------------+
@@ -71,6 +71,7 @@ Technique is the basis of efficient algorithms for all kinds of problems, such a
 
 `**` The deletion cost is O(log n) for the minimum or maximum, O(n) for an arbitrary element.
 ## Graph
+[Graph](graph.py) examples
 ## Tree
 ### Tree Traversals: BFS vs DFS
 BFS starts visiting nodes from root while DFS starts visiting nodes from leaves. So if our problem is to search something that is more likely to closer to root, we would prefer BFS. And if the target node is close to a leaf, we would prefer DFS.
