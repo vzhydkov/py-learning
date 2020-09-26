@@ -50,6 +50,25 @@ def merge_sort(lst):
     >>> lst == [17, 20, 26, 31, 44, 54, 55, 77, 93]
     True
     """
+    def merge(lst, left, right):
+        i = j = k = 0
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                lst[k] = left[i]
+                i += 1
+            else:
+                lst[k] = right[j]
+                j += 1
+            k += 1
+        while i < len(left):
+            lst[k] = left[i]
+            i += 1
+            k += 1
+        while j < len(right):
+            lst[k] = right[j]
+            j += 1
+            k += 1
+
     if len(lst) <= 1:
         return
     mid = len(lst) // 2
@@ -58,23 +77,7 @@ def merge_sort(lst):
 
     merge_sort(left)
     merge_sort(right)
-    i = j = k = 0
-    while i < len(left) and j < len(right):
-        if left[i] < right[j]:
-            lst[k] = left[i]
-            i += 1
-        else:
-            lst[k] = right[j]
-            j += 1
-        k += 1
-    while i < len(left):
-        lst[k] = left[i]
-        i += 1
-        k += 1
-    while j < len(right):
-        lst[k] = right[j]
-        j += 1
-        k += 1
+    merge(lst, left, right)
 
 
 def quick_sort(lst):
@@ -94,14 +97,14 @@ def quick_sort(lst):
         lst[follower], lst[end] = lst[end], lst[follower]
         return follower
 
-    def _quick_sort(lst, start, end):
+    def sort(lst, start, end):
         if start >= end:
             return
         p = partition(lst, start, end)
-        _quick_sort(lst, start, p - 1)
-        _quick_sort(lst, p + 1, end)
+        sort(lst, start, p - 1)
+        sort(lst, p + 1, end)
 
-    _quick_sort(lst, 0, len(lst) - 1)
+    sort(lst, 0, len(lst) - 1)
 
 
 if __name__ == "__main__":
