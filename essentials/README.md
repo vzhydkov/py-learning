@@ -31,9 +31,9 @@ Since  2**20 is approximately 1 million, the ratio approximately 50,000
 |   Algorithm    |-------------+-------------+-------------+-------------+
 |                | Best        | Average     | Worst       | Worst       |
 +----------------+-------------+-------------+-------------+-------------+
-| Quicksort      | O(n log(n)) | O(n log(n)) | O(n**2)     | O(n)        |
-| Mergesort      | O(n log(n)) | O(n log(n)) | O(n log(n)) | O(n)        |
-| Heapsort       | O(n log(n)) | O(n log(n)) | O(n log(n)) | O(1)        |
+| Quick Sort     | O(n log(n)) | O(n log(n)) | O(n**2)     | O(n)        |
+| Merge Sort     | O(n log(n)) | O(n log(n)) | O(n log(n)) | O(n)        |
+| Heap Sort      | O(n log(n)) | O(n log(n)) | O(n log(n)) | O(1)        |
 | Bubble Sort    | O(n)        | O(n**2)     | O(n**2)     | O(1)        |
 | Insertion Sort | O(n)        | O(n**2)     | O(n**2)     | O(1)        |
 | Selection Sort | O(n**2)     | O(n**2)     | O(n**2)     | O(1)        |
@@ -47,7 +47,7 @@ There are two key attributes that a problem must have in order for dynamic progr
 
 [Fibonacci memoization](fibonacci.py#L45) example
 ## Divide And Conquer
-Technique is the basis of efficient algorithms for all kinds of problems, such as sorting (e.g., quicksort, merge sort), multiplying large numbers (e.g. the Karatsuba algorithm), finding the closest pair of points, syntactic analysis (e.g., top-down parsers), and computing the discrete Fourier transform.
+Technique is the basis of efficient algorithms for all kinds of problems, such as sorting (e.g., quick sort, merge sort), multiplying large numbers (e.g. the Karatsuba algorithm), finding the closest pair of points, syntactic analysis (e.g., top-down parsers), and computing the discrete Fourier transform.
 
 [Fibonacci fast doubling](fibonacci.py#L64) and [multiply by Karatsuba algorithm](math.py#L1) examples
 # Data structures

@@ -43,6 +43,67 @@ def insertion_sort(lst):
         lst[pos] = val
 
 
+def merge_sort(lst):
+    """
+    >>> lst = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+    >>> merge_sort(lst)
+    >>> lst == [17, 20, 26, 31, 44, 54, 55, 77, 93]
+    True
+    """
+    if len(lst) <= 1:
+        return
+    mid = len(lst) // 2
+    left = lst[:mid]
+    right = lst[mid:]
+
+    merge_sort(left)
+    merge_sort(right)
+    i = j = k = 0
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            lst[k] = left[i]
+            i += 1
+        else:
+            lst[k] = right[j]
+            j += 1
+        k += 1
+    while i < len(left):
+        lst[k] = left[i]
+        i += 1
+        k += 1
+    while j < len(right):
+        lst[k] = right[j]
+        j += 1
+        k += 1
+
+
+def quick_sort(lst):
+    """
+    >>> lst = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+    >>> quick_sort(lst)
+    >>> lst == [17, 20, 26, 31, 44, 54, 55, 77, 93]
+    True
+    """
+    def partition(lst, start, end):
+        follower = leader = start
+        while leader < end:
+            if lst[leader] <= lst[end]:
+                lst[follower], lst[leader] = lst[leader], lst[follower]
+                follower += 1
+            leader += 1
+        lst[follower], lst[end] = lst[end], lst[follower]
+        return follower
+
+    def _quick_sort(lst, start, end):
+        if start >= end:
+            return
+        p = partition(lst, start, end)
+        _quick_sort(lst, start, p - 1)
+        _quick_sort(lst, p + 1, end)
+
+    _quick_sort(lst, 0, len(lst) - 1)
+
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
