@@ -55,5 +55,4 @@ if __name__ == "__main__":
         [2, 1, 1, 1],
     ]
     g = NeighboursGraph(matrix)
-    print(g.count_neighbours())
-    # assert {0: 3, 1: 5, 2: 1} == g.count_neighbours()
+    assert {0: 3, 1: 5, 2: 1} == g.count_neighbours()
