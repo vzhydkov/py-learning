@@ -1,5 +1,5 @@
 """
-Find maximum number of each connected neighbours
+Find maximum number for each connected component in an undirected graph
 """
 
 
@@ -54,5 +54,5 @@ if __name__ == "__main__":
         [0, 1, 2, 1],
         [2, 1, 1, 1],
     ]
-    g = NeighboursGraph(matrix)
-    assert {0: 3, 1: 5, 2: 1} == g.count_neighbours()
+    graph = NeighboursGraph(matrix)
+    assert {0: 3, 1: 5, 2: 1} == graph.count_neighbours()
