@@ -35,11 +35,11 @@ def insertion_sort(lst):
     True
     """
     for i in range(1, len(lst)):
-        val = lst[i]
         pos = i
+        val = lst[i]
         while pos > 0 and lst[pos-1] > val:
             lst[pos] = lst[pos-1]
-            pos = pos-1
+            pos -= 1
         lst[pos] = val
 
 
