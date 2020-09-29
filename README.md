@@ -9,6 +9,6 @@
     - [Tree](essentials#tree)
     - [Hash Table](essentials#hash-table)
     - [List](essentials#list)
-- [Python built-in features](basics#built-in-features)
+- [Python built-in features](builtin#built-in-features)
 
 ![Learn Python](index.png)
