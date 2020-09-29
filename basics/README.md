@@ -1,7 +1,7 @@
 # Built-in features
 ### Examples
-- [Class decorator](dec_classes.py)
-- [Function decorator](dec_functions.py)
+- [Class decorator](decorator_cls.py)
+- [Function decorator](decorator_fn.py)
 - [Metaclass](meta.py)
 - [Overloading](overloading.py)
 - [Signleton](singleton.py)
