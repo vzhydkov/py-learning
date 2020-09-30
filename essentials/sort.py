@@ -100,9 +100,9 @@ def quick_sort(lst):
     def sort(lst, start, end):
         if start >= end:
             return
-        p = partition(lst, start, end)
-        sort(lst, start, p - 1)
-        sort(lst, p + 1, end)
+        index = partition(lst, start, end)
+        sort(lst, start, index - 1)
+        sort(lst, index + 1, end)
 
     sort(lst, 0, len(lst) - 1)
 
