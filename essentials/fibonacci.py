@@ -30,6 +30,7 @@ def fibonacci_generator(n):
 
 def fibonacci_recursion(n):
     """
+    Time complexity: O(2**n)
     >>> fibonacci_recursion(16)
     987
     """
