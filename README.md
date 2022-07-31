@@ -1,4 +1,4 @@
-# Computer Science essentials using Python
+# Computer Science using Python
 - [Big O Notation](essentials#big-o-notation)
 - [Algorithms](essentials#algorithms)
     - [Sorting](essentials#sorting)
