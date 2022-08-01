@@ -8,7 +8,7 @@
     - [Graph](essentials#graph)
     - [Tree](essentials#tree)
     - [Hash Table](essentials#hash-table)
-    - [List](essentials/readme.md#list)
+    - [List](essentials#list)
 - [Python built-in features](builtin#built-in-features)
 
 ![Learn Python](index.png)
