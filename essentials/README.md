@@ -31,14 +31,15 @@ Since  2**20 is approximately 1 million, the ratio approximately 50,000
 |   Algorithm    |-------------+-------------+-------------+-------------+
 |                | Best        | Average     | Worst       | Worst       |
 +----------------+-------------+-------------+-------------+-------------+
-| Quick Sort     | O(n log(n)) | O(n log(n)) | O(n**2)     | O(n)        |
-| Merge Sort     | O(n log(n)) | O(n log(n)) | O(n log(n)) | O(n)        |
-| Heap Sort      | O(n log(n)) | O(n log(n)) | O(n log(n)) | O(1)        |
-| Bubble Sort    | O(n)        | O(n**2)     | O(n**2)     | O(1)        |
-| Insertion Sort | O(n)        | O(n**2)     | O(n**2)     | O(1)        |
-| Selection Sort | O(n**2)     | O(n**2)     | O(n**2)     | O(1)        |
-| Bucket Sort    | O(n+k)      | O(n+k)      | O(n**2)     | O(nk)       |
-| Radix Sort     | O(nk)       | O(nk)       | O(nk)       | O(n+k)      |
+| Quick Sort     | Ω(n log(n)) | Θ(n log(n)) | O(n**2)     | O(n)        |
+| Merge Sort     | Ω(n log(n)) | Θ(n log(n)) | O(n log(n)) | O(n)        |
+| Heap Sort      | Ω(n log(n)) | Θ(n log(n)) | O(n log(n)) | O(1)        |
+| Tim Sort       | Ω(n)        | Θ(n log(n)) | O(n log(n)) | O(n)        |
+| Bubble Sort    | Ω(n)        | Θ(n**2)     | O(n**2)     | O(1)        |
+| Insertion Sort | Ω(n)        | Θ(n**2)     | O(n**2)     | O(1)        |
+| Selection Sort | Ω(n**2)     | Θ(n**2)     | O(n**2)     | O(1)        |
+| Bucket Sort    | Ω(n+k)      | Θ(n+k)      | O(n**2)     | O(nk)       |
+| Radix Sort     | Ω(nk)       | Θ(nk)       | O(nk)       | O(n+k)      |
 +----------------+-------------+-------------+-------------+-------------+
 ```
 [Sorting](sort.py) examples
@@ -99,6 +100,19 @@ Space usage:
 - Extra Space required for Depth First Traversals is O(h) where h is maximum height of Binary Tree. In Depth First Traversals, stack (or function call stack) stores all ancestors of a node.
 
 [Tree](tree.py) examples
+## Union Find
+```
++----------------------------------------------------------+
+|               Algorithm                 | Worst-case time|
++-----------------------------------------+----------------+
+| quick-find                              | MN             |
+| quick-union                             | MN             |
+| weighted quick-union                    | N + M log N    |
+| quick-union & path compression          |  N + M log N   |
+| weighted quick-union & path compression |  N + M lg N    |
++-----------------------------------------+----------------+
+M union find operations on a set of N objects
+```
 ## Hash Table
 ### Separate chaining vs linear probing
 Separate chaining
@@ -119,18 +133,22 @@ Balanced search trees
 - Stronger performance guarantee
 - Support for ordered ST operations
 - Easier to implement compareTo() correctly than equals() and hashCode()
-## List
+## [List](list.py)
+### Stack
+LIFO - last in first out
+### Queue
+FIFO - first in first out (linked lists have a performance advantage over lists here)
 ### Singly linked list vs Doubly linked list
 Complexity
 - In singly linked list the complexity of insertion and deletion at a known position is O(n)
-- In case od doubly linked list the complexity of insertion and deletion at a known position is O(1)
+- In case of doubly linked list the complexity of insertion and deletion at a known position is O(1)
 
 Implementation
 - In singly linked list implementation is such as where the node contains some data and a pointer to the next node in the list
 - While doubly linked list has some more complex implementation where the node contains some data and a pointer to the next as well as the previous node in the list
 Order of elements
 - Singly linked list allows traversal elements only in one way
-- Doubly linked list allows element two way traversal
+- Doubly linked list allows element two-way traversal
 
 Usage
 - Singly linked list are generally used for implementation of stacks
@@ -143,3 +161,9 @@ Index performance
 Memory consumption
 - As singly linked list store pointer of only one node so consumes lesser memory
 - On other hand Doubly linked list uses more memory per node(two pointers)
+### Binary Heap
+Array representation of a heap-ordered complete binary tree
+Time complicity insert/del max O(log n) and max O(1) 
+Heap-ordered binary tree:
+- keys in nodes
+- parent's keys no smaller than children's keys
