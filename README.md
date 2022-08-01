@@ -1,5 +1,5 @@
 # Computer Science using Python
-- [Big O Notation](essentials#big-o-notation)
+- [Big O Notation](essentials/readme#big-o-notation)
 - [Algorithms](essentials#algorithms)
     - [Sorting](essentials#sorting)
     - [Dynamic Programming](essentials#dynamic-programming)
@@ -8,7 +8,7 @@
     - [Graph](essentials#graph)
     - [Tree](essentials#tree)
     - [Hash Table](essentials#hash-table)
-    - [List](essentials#list)
+    - [List](essentials/readme#list)
 - [Python built-in features](builtin#built-in-features)
 
 ![Learn Python](index.png)
