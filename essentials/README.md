@@ -1,3 +1,13 @@
+- [Big O Notation](#big-o-notation)
+- [Algorithms](#algorithms)
+    - [Sorting](#sorting)
+    - [Dynamic Programming](#dynamic-programming)
+    - [Divide And Conquer](#divide-and-conquer)
+- [Data Structures](#data-structures)
+    - [Graph](#graph)
+    - [Tree](#tree)
+    - [Hash Table](#hash-table)
+    - [List](#list)
 # Big O Notation
 ```
 +------+----------+-------------+-------+--------------+-----------+-------------+-----------+
@@ -133,7 +143,7 @@ Balanced search trees
 - Stronger performance guarantee
 - Support for ordered ST operations
 - Easier to implement compareTo() correctly than equals() and hashCode()
-## [List](list.py)
+## List
 ### Stack
 LIFO - last in first out
 ### Queue
@@ -167,3 +177,5 @@ Time complicity insert/del max O(log n) and max O(1)
 Heap-ordered binary tree:
 - keys in nodes
 - parent's keys no smaller than children's keys
+
+[List examples](list.py)
