@@ -175,9 +175,14 @@ Index performance
 Memory consumption
 - As singly linked list store pointer of only one node so consumes lesser memory
 - On other hand Doubly linked list uses more memory per node(two pointers)
-### Binary Heap
-Array representation of a heap-ordered complete binary tree
-Time complicity insert/del max O(log n) and max O(1) 
+### Heap (Binary Heap)
+Array representation of a heap-ordered complete binary tree.
+In a heap tree, the value in a node is always smaller than both of its children. This is called the heap property.
+This is different from a binary search tree, in which only the left node will be smaller than the value of its parent.
+The heap data structure in general, is not designed to allow finding any element except the smallest one.
+For retrieval of any element by size, a better option is a binary search tree.
+
+Time complicity push/pop O(log n) and find min O(1) 
 Heap-ordered binary tree:
 - keys in nodes
 - parent's keys no smaller than children's keys
