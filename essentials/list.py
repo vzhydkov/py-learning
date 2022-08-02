@@ -1,22 +1,24 @@
-from collections import deque
 import heapq
+from collections import deque
 
-# SLL Queue (FIFO)
-queue = deque()
-queue.append("Mary")
-queue.append("John")
-queue.popleft() # Mary
-# SLL Stack (LIFO)
-stack = deque()
-stack.appendleft("Mary")
-stack.appendleft("John")
-stack.popleft() # John
 # Heap
 lst = [5, 4, 3, 2, 1]
 heapq.heapify(lst)
 heapq.heappop(lst)  # 1
 heapq.heappush(lst, 0)
 heapq.heappop(lst)  # 0
+
+# A deque (double-ended queue) is represented internally as a doubly linked list
+# DLL Queue (FIFO)
+queue = deque()
+queue.append("Mary")
+queue.append("John")
+queue.popleft()  # Mary
+# DLL Stack (LIFO)
+stack = deque()
+stack.appendleft("Mary")
+stack.appendleft("John")
+stack.popleft()  # John
 
 
 # Singly linked list node

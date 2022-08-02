@@ -69,11 +69,9 @@ Technique is the basis of efficient algorithms for all kinds of problems, such a
 |   Data Structure     |----------+------------+----------| Space usage |
 |                      |  Insert  |   Delete   |  Search  |             |
 +----------------------+----------+------------+----------+-------------+
-| Unsorted array       | O(1)     | O(1)       | O(n)     | O(n)        |
-| Value-indexed array  | O(1)     | O(1)       | O(1)     | O(n)        |
-| Sorted array         | O(n)     | O(n)       | O(log n) | O(n)        |
-| Unsorted linked list | O(1)*    | O(1)*      | O(n)     | O(n)        |
-| Sorted linked list   | O(n)*    | O(1)*      | O(n)     | O(n)        |
+| Array                | O(n)     | O(n)       | O(n)     | O(n)        |
+| Stack/Queue          | O(1)     | O(1)       | O(n)     | O(n)        |
+| Linked list          | O(1)*    | O(1)*      | O(n)     | O(n)        |
 | Balanced binary tree | O(log n) | O(log n)   | O(log n) | O(n)        |
 | Heap                 | O(log n) | O(log n)** | O(n)     | O(n)        |
 | Hash table           | O(1)     | O(1)       | O(1)     | O(n)        |
