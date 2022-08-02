@@ -182,7 +182,7 @@ This is different from a binary search tree, in which only the left node will be
 The heap data structure in general, is not designed to allow finding any element except the smallest one.
 For retrieval of any element by size, a better option is a binary search tree.
 
-Time complicity push/pop O(log n) and find min O(1) 
+Time complicity push/pop O(log n) and find min O(1) and search and building heap is O(n)
 Heap-ordered binary tree:
 - keys in nodes
 - parent's keys no smaller than children's keys
