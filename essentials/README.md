@@ -77,9 +77,10 @@ Technique is the basis of efficient algorithms for all kinds of problems, such a
 | Hash table           | O(1)     | O(1)       | O(1)     | O(n)        |
 +----------------------+----------+------------+----------+-------------+
 ```
-`*` The cost to add or delete an element into a known location in the list (i.e. if you have an iterator to the location) is O(1). If you don't know the location, then you need to traverse the list to the location of deletion/insertion, which takes O(n) time.
+- `*` The cost to add or delete an element into a known location in the list (i.e. if you have an iterator to the location) is O(1). If you don't know the location, then you need to traverse the list to the location of deletion/insertion, which takes O(n) time.
+- `**` The deletion cost is O(log n) for the minimum or maximum, O(n) for an arbitrary element.
 
-`**` The deletion cost is O(log n) for the minimum or maximum, O(n) for an arbitrary element.
+[CPython objects time complexity](https://wiki.python.org/moin/TimeComplexity)
 ## Graph
 - Depth-first search put unvisited vertices on a stack
 - Breadth-first search put unvisited vertices on a queue 
