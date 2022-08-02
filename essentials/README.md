@@ -83,6 +83,9 @@ Technique is the basis of efficient algorithms for all kinds of problems, such a
 
 `**` The deletion cost is O(log n) for the minimum or maximum, O(n) for an arbitrary element.
 ## Graph
+- Depth-first search put unvisited vertices on a stack
+- Breadth-first search put unvisited vertices on a queue 
+
 [Graph](graph.py) examples
 ## Tree
 ### Tree Traversals: BFS vs DFS
