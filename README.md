@@ -189,5 +189,8 @@ Time complicity push/pop O(log n) and find min O(1) and search and building heap
 Heap-ordered binary tree:
 - keys in nodes
 - parent's keys no smaller than children's keys
+### Bisect
+This module provides support for maintaining a list in sorted order without having to sort the list after each insertion.
+Time complexity of bisect operations O(log(n)) and O(n) for insort
 
 [List examples](essentials/list.py)

@@ -1,3 +1,4 @@
+import bisect
 import heapq
 from collections import deque
 
@@ -19,6 +20,18 @@ stack = deque()
 stack.appendleft("Mary")
 stack.appendleft("John")
 stack.popleft()  # John
+
+# Bisect (a, x[, lo[, hi]])
+lst = [33, 36, 40, 43, 44, 48, 50]
+bisect.bisect(lst, 42)  # 3
+lst.insert(3, 42)
+# Suppose that the element you want to insert is already present in the list,
+# bisect_left() returns the index before that element
+bisect.bisect_left(lst, 42)  # 3
+# bisect_right returns the index after that element
+bisect.bisect_right(lst, 42)  # 4
+# used to insert the element in the list without disturbing the order of the list
+bisect.insort(lst, 41)  # [33, 36, 40, 41, 42, 43, 44, 48, 50]
 
 
 # Singly linked list node
