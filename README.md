@@ -107,8 +107,17 @@ Breadth First Traversal
 
 Depth First Traversals
 - Preorder Traversal: 1 2 4 5 3 
+  - Step 1 − Visit the root node
+  - Step 2 − Recursively traverse left subtree
+  - Step 3 − Recursively traverse the right subtree.
 - Inorder Traversal:  4 2 5 1 3 
+  - Step 1 − Recursively traverse left subtree
+  - Step 2 − Visit the root node
+  - Step 3 − Recursively traverse the right subtree.
 - Postorder Traversal: 4 5 2 3 1
+  - Step 1 − Recursively traverse left subtree.
+  - Step 2 − Recursively traverse the right subtree.
+  - Step 3 − Visit the root node.
 
 Time Complexity: O(n)
 

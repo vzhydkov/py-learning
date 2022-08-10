@@ -2,37 +2,6 @@ import bisect
 import heapq
 from collections import deque
 
-# Heap
-lst = [5, 4, 3, 2, 1]
-heapq.heapify(lst)
-heapq.heappop(lst)  # 1
-heapq.heappush(lst, 0)
-heapq.heappop(lst)  # 0
-
-# A deque (double-ended queue) is represented internally as a doubly linked list
-# DLL Queue (FIFO)
-queue = deque()
-queue.append("Mary")
-queue.append("John")
-queue.popleft()  # Mary
-# DLL Stack (LIFO)
-stack = deque()
-stack.appendleft("Mary")
-stack.appendleft("John")
-stack.popleft()  # John
-
-# Bisect (a, x[, lo[, hi]])
-lst = [33, 36, 40, 43, 44, 48, 50]
-bisect.bisect(lst, 42)  # 3
-lst.insert(3, 42)
-# Suppose that the element you want to insert is already present in the list,
-# bisect_left() returns the index before that element
-bisect.bisect_left(lst, 42)  # 3
-# bisect_right returns the index after that element
-bisect.bisect_right(lst, 42)  # 4
-# used to insert the element in the list without disturbing the order of the list
-bisect.insort(lst, 41)  # [33, 36, 40, 41, 42, 43, 44, 48, 50]
-
 
 # Singly linked list node
 class SLLNode:
@@ -43,8 +12,8 @@ class SLLNode:
 
 # Double linked list node
 class DLLNode:
-	def __init__(self, value=None):
-		self.value = value
+	def __init__(self, data=None):
+		self.data = data
 		self.next = None
 		self.prev = None
 
@@ -122,3 +91,44 @@ class DLL:
 				return i
 			start = start.next
 		return
+
+
+if __name__ == "__main__":
+	dll = DLL()
+	dll.append(1)
+	dll.insert(0, 0)
+	assert dll.index(1) == 1
+	dll.remove(1)
+	assert dll.index(1) is None
+
+	# Heap
+	lst = [5, 4, 3, 2, 1]
+	heapq.heapify(lst)
+	assert heapq.heappop(lst) == 1
+	heapq.heappush(lst, 0)
+	assert heapq.heappop(lst) == 0
+
+	# A deque (double-ended queue) is represented internally as a doubly linked list
+	# DLL Queue (FIFO)
+	queue = deque()
+	queue.append("Mary")
+	queue.append("John")
+	assert queue.popleft() == "Mary"
+	# DLL Stack (LIFO)
+	stack = deque()
+	stack.appendleft("Mary")
+	stack.appendleft("John")
+	assert stack.popleft() == "John"
+
+	# Bisect (a, x[, lo[, hi]])
+	lst = [33, 36, 40, 43, 44, 48, 50]
+	assert bisect.bisect(lst, 42) == 3
+	lst.insert(3, 42)
+	# Suppose that the element you want to insert is already present in the list,
+	# bisect_left() returns the index before that element
+	assert bisect.bisect_left(lst, 42) == 3
+	# bisect_right returns the index after that element
+	assert bisect.bisect_right(lst, 42) == 4
+	# used to insert the element in the list without disturbing the order of the list
+	bisect.insort(lst, 41)
+	assert lst == [33, 36, 40, 41, 42, 43, 44, 48, 50]

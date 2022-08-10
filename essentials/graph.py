@@ -1,9 +1,7 @@
-"""
-Find maximum number for each connected component in an undirected graph
-"""
-
-
 class NeighboursGraph:
+    """
+    Find maximum number for each connected component in an undirected graph
+    """
     # row and column numbers of 4 neighbours
     ROW_SHIFT = [0, 1, 0, -1]
     COL_SHIFT = [-1, 0, 1, 0]
@@ -56,3 +54,35 @@ if __name__ == "__main__":
     ]
     graph = NeighboursGraph(matrix)
     assert {0: 3, 1: 5, 2: 1} == graph.count_neighbours()
+
+    # Example of DFS and BFS
+    graph = {
+        'A': ['B','C'],
+        'B': ['D', 'E'],
+        'C': [],
+        'D': [],
+        'E': []
+    }
+
+    def dfs(visited, graph, node):
+        if node not in visited:
+            visited.add(node)
+            for neighbor in graph[node]:
+                dfs(visited, graph, neighbor)
+    visited = set()
+    dfs(visited, graph, "A")
+    assert visited == {'E', 'B', 'A', 'C', 'D'}
+
+    def bfs(visited, graph, node):
+        visited.append(node)
+        queue.append(node)
+        while queue:
+            s = queue.pop(0)
+            for neighbor in graph[s]:
+                if neighbor not in visited:
+                    visited.append(neighbor)
+                    queue.append(neighbor)
+    visited = set()
+    queue = []
+    dfs(visited, graph, "A")
+    assert visited == {'E', 'C', 'D', 'B', 'A'}
