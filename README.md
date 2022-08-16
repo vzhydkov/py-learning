@@ -65,7 +65,7 @@ There are two key attributes that a problem must have in order for dynamic progr
 ## Divide And Conquer
 Technique is the basis of efficient algorithms for all kinds of problems, such as sorting (e.g., quick sort, merge sort), multiplying large numbers (e.g. the Karatsuba algorithm), finding the closest pair of points, syntactic analysis (e.g., top-down parsers), and computing the discrete Fourier transform.
 
-[Fibonacci fast doubling](essentials/fibonacci.py#L65) and [multiply by Karatsuba algorithm](essentials/math.py#L1) examples
+[Fibonacci fast doubling](essentials/fibonacci.py#L65) and [multiply by Karatsuba algorithm](essentials/common.py#L3) examples
 # Data structures
 ```
 +----------------------+----------+------------+----------+-------------+

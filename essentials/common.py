@@ -1,3 +1,5 @@
+import math
+
 def multiply_karatsuba(x, y):
     """
     Karatsuba algorithm
@@ -18,6 +20,18 @@ def multiply_karatsuba(x, y):
         bd = multiply_karatsuba(b, d)
         ad_bc = multiply_karatsuba(a + b, c + d) - ac - bd
         return ac * 10 ** (2 * nby2) + (ad_bc * 10 ** nby2) + bd
+
+
+def is_prime(n):
+    """
+    Time complexity: √n
+    >>> is_prime(199)
+    True
+    """
+    for i in range(2, int(math.sqrt(n))+1):
+        if (n % i) == 0:
+            return False
+    return True
 
 
 if __name__ == "__main__":
