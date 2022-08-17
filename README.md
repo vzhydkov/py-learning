@@ -3,6 +3,7 @@
 - [Big O Notation](#big-o-notation)
 - [Algorithms](#algorithms)
     - [Sorting](#sorting)
+- [Concepts](#concepts)
     - [Dynamic Programming](#dynamic-programming)
     - [Divide And Conquer](#divide-and-conquer)
 - [Data Structures](#data-structures)
@@ -58,8 +59,12 @@ Since  2**20 is approximately 1 million, the ratio approximately 50,000
 +----------------+-------------+-------------+-------------+-------------+
 ```
 [Sorting](essentials/sort.py) examples
+# Concepts
 ## Dynamic Programming
 There are two key attributes that a problem must have in order for dynamic programming to be applicable: optimal substructure and overlapping sub-problems. If a problem can be solved by combining optimal solutions to non-overlapping sub-problems, the strategy is called "divide and conquer" instead.
+
+- A bottom-up implementation's runtime is usually faster, as iteration does not have the overhead that recursion does.
+- A top-down implementation is usually much easier to write. This is because with recursion, the ordering of subproblems does not matter, whereas with tabulation, we need to go through a logical ordering of solving subproblems.
 
 [Fibonacci memoization](essentials/fibonacci.py#L46) example
 ## Divide And Conquer
