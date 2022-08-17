@@ -43,14 +43,16 @@ def fibonacci_recursion(n):
     return fibonacci_recursion(n-1) + fibonacci_recursion(n-2)
 
 
-def fibonacci_memoization(n, memo={}):
+def fibonacci_memo(n, memo=None):
     """
-    Dynamic Programming
+    Dynamic Programming "top-down"
     Time complexity: O(n)
     Space complexity: O(n)
-    >>> fibonacci_memoization(16)
+    >>> fibonacci_memo(16)
     987
     """
+    if memo is None:
+        memo = {}
     if n < 0:
         raise ValueError('Negative arguments not implemented')
     if n == 0:
@@ -58,8 +60,30 @@ def fibonacci_memoization(n, memo={}):
     if n == 1 or n == 2:
         return 1
     if not memo.get(n):
-        memo[n] = fibonacci_memoization(n - 1) + fibonacci_memoization(n - 2)
+        memo[n] = fibonacci_memo(n - 1) + fibonacci_memo(n - 2)
     return memo[n]
+
+
+def fibonacci_dp(n: int) -> int:
+    """
+    Dynamic Programming "bottom-up"
+    Time complexity: O(n)
+    Space complexity: O(n)
+    >>> fibonacci_dp(16)
+    987
+    """
+    if n < 0:
+        raise ValueError('Negative arguments not implemented')
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    dp = [0] * (n + 1)
+    dp[1] = 1
+    dp[2] = 1
+    for i in range(3, n + 1):
+        dp[i] = dp[i - 1] + dp[i - 2]  # Recurrence relation
+    return dp[n]
 
 
 def fibonacci_fast_doubling(n):
