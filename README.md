@@ -1,11 +1,11 @@
 # Computer Science using Python
 `#all_you_need_to_know`
-- [Big O Notation](#big-o-notation)
-- [Algorithms](#algorithms)
-    - [Sorting](#sorting)
 - [Concepts](#concepts)
+    - [Big O Notation](#big-o-notation)
     - [Dynamic Programming](#dynamic-programming)
     - [Divide And Conquer](#divide-and-conquer)
+- [Algorithms](#algorithms)
+    - [Sorting](#sorting)
 - [Data Structures](#data-structures)
     - [Graph](#graph)
     - [Tree](#tree)
@@ -14,7 +14,8 @@
 - [Python built-in features](builtin#built-in-features)
 
 ![Learn Python](index.png)
-# Big O Notation
+# Concepts
+## Big O Notation
 ```
 +------+----------+-------------+-------+--------------+-----------+-------------+-----------+
 |      | Constant | Logarithmic |Linear | Linearithmic | Quadratic | Exponential | Factorial |
@@ -39,6 +40,17 @@ Compare Quadratic to Linearithmic
 n**n / (n log(n)) = n / log(n) = 1,000,000 / lg(1,000,000)
 Since  2**20 is approximately 1 million, the ratio approximately 50,000
 ```
+## Dynamic Programming
+There are two key attributes that a problem must have in order for dynamic programming to be applicable: optimal substructure and overlapping sub-problems. If a problem can be solved by combining optimal solutions to non-overlapping sub-problems, the strategy is called "divide and conquer" instead.
+
+- A bottom-up implementation's runtime is usually faster, as iteration does not have the overhead that recursion does.
+- A top-down implementation is usually much easier to write. This is because with recursion, the ordering of subproblems does not matter, whereas with tabulation, we need to go through a logical ordering of solving subproblems.
+
+[Fibonacci memoization](essentials/fibonacci.py#L46) example
+## Divide And Conquer
+Technique is the basis of efficient algorithms for all kinds of problems, such as sorting (e.g., quick sort, merge sort), multiplying large numbers (e.g. the Karatsuba algorithm), finding the closest pair of points, syntactic analysis (e.g., top-down parsers), and computing the discrete Fourier transform.
+
+[Fibonacci fast doubling](essentials/fibonacci.py#L65) and [multiply by Karatsuba algorithm](essentials/common.py#L1) examples
 # Algorithms
 ## Sorting
 ```
@@ -59,18 +71,6 @@ Since  2**20 is approximately 1 million, the ratio approximately 50,000
 +----------------+-------------+-------------+-------------+-------------+
 ```
 [Sorting](essentials/sort.py) examples
-# Concepts
-## Dynamic Programming
-There are two key attributes that a problem must have in order for dynamic programming to be applicable: optimal substructure and overlapping sub-problems. If a problem can be solved by combining optimal solutions to non-overlapping sub-problems, the strategy is called "divide and conquer" instead.
-
-- A bottom-up implementation's runtime is usually faster, as iteration does not have the overhead that recursion does.
-- A top-down implementation is usually much easier to write. This is because with recursion, the ordering of subproblems does not matter, whereas with tabulation, we need to go through a logical ordering of solving subproblems.
-
-[Fibonacci memoization](essentials/fibonacci.py#L46) example
-## Divide And Conquer
-Technique is the basis of efficient algorithms for all kinds of problems, such as sorting (e.g., quick sort, merge sort), multiplying large numbers (e.g. the Karatsuba algorithm), finding the closest pair of points, syntactic analysis (e.g., top-down parsers), and computing the discrete Fourier transform.
-
-[Fibonacci fast doubling](essentials/fibonacci.py#L65) and [multiply by Karatsuba algorithm](essentials/common.py#L1) examples
 # Data structures
 ```
 +----------------------+----------+------------+----------+-------------+
