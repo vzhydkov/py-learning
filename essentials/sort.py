@@ -19,12 +19,14 @@ def selection_sort(lst):
     >>> lst == [17, 20, 26, 31, 44, 54, 55, 77, 93]
     True
     """
-    for i in range(len(lst)-1, 0, -1):
-        max_val = 0
-        for k in range(1, i+1):
-            if lst[k] > lst[max_val]:
-                max_val = k
-        lst[i], lst[max_val] = lst[max_val], lst[i]
+    for i in range(len(lst)):
+        min_index = i
+        for j in range(i + 1, len(lst)):
+            # Update minimum index
+            if lst[j] < lst[min_index]:
+                min_index = j
+        # Swap current index with minimum element in rest of list
+        lst[min_index], lst[i] = lst[i], lst[min_index]
 
 
 def insertion_sort(lst):
