@@ -107,6 +107,8 @@ if __name__ == "__main__":
 	assert heapq.heappop(lst) == 1
 	heapq.heappush(lst, 0)
 	assert heapq.heappop(lst) == 0
+	# last 3 largest in list
+	assert heapq.nlargest(3, lst) == [5, 4, 3]
 
 	# A deque (double-ended queue) is represented internally as a doubly linked list
 	# DLL Queue (FIFO)
