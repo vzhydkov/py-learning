@@ -9,10 +9,10 @@ class ConnectedComponents:
     Where E = Number of edges, V = Number of vertices
     """
     def dfs(self, node, graph, visited):
-        for adj in graph[node]:
-            if not visited[adj]:
-                visited[adj] = True
-                self.dfs(adj, graph, visited)
+        for adjacency in graph[node]:
+            if not visited[adjacency]:
+                visited[adjacency] = True
+                self.dfs(adjacency, graph, visited)
 
     def count(self, n: int, edges: List[List[int]]) -> int:
         count = 0
