@@ -1,3 +1,30 @@
+from typing import List
+
+
+class ConnectedComponents:
+    """ Count number of Connected Components in an Undirected Graph """
+    def dfs(self, node, graph, visited):
+        for adj in graph[node]:
+            if not visited[adj]:
+                visited[adj] = True
+                self.dfs(adj, graph, visited)
+
+    def count(self, n: int, edges: List[List[int]]) -> int:
+        count = 0
+        graph = [[] for _ in range(n)]
+        visited = [False for _ in range(n)]
+        for a, b in edges:
+            graph[a].append(b)
+            graph[b].append(a)
+
+        for i in range(n):
+            if not visited[i]:
+                count += 1
+                visited[i] = True
+                self.dfs(i, graph, visited)
+        return count
+
+
 class NeighboursGraph:
     """
     Find maximum number for each connected component in an undirected graph
@@ -47,6 +74,12 @@ class NeighboursGraph:
 
 
 if __name__ == "__main__":
+    # connected components
+    # 0 - 1   3
+    #     |   |
+    #     2   4
+    assert 2 == ConnectedComponents().count(5, [[0, 1], [1, 2], [3, 4]])
+    # neighbours graph
     matrix = [
         [0, 0, 1, 2],
         [0, 1, 2, 1],
