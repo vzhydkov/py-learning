@@ -2,7 +2,12 @@ from typing import List
 
 
 class ConnectedComponents:
-    """ Count number of Connected Components in an Undirected Graph """
+    """
+    Count number of Connected Components in an Undirected Graph
+    Time complexity: O(E+V)
+    Space complexity: O(E+V)
+    Where E = Number of edges, V = Number of vertices
+    """
     def dfs(self, node, graph, visited):
         for adj in graph[node]:
             if not visited[adj]:
