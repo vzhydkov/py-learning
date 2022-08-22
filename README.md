@@ -142,8 +142,8 @@ Space usage:
 | quick-union & path compression          | N + M log N    |
 | weighted quick-union & path compression | N + M lg N     |
 +-----------------------------------------+----------------+
-M union find operations on a set of N objects
 ```
+- M union find operations on a set of N objects
 ## Hash Table
 ### Separate chaining vs linear probing
 Separate chaining
