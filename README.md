@@ -139,8 +139,8 @@ Space usage:
 | quick-find                              | MN             |
 | quick-union                             | MN             |
 | weighted quick-union                    | N + M log N    |
-| quick-union & path compression          |  N + M log N   |
-| weighted quick-union & path compression |  N + M lg N    |
+| quick-union & path compression          | N + M log N    |
+| weighted quick-union & path compression | N + M lg N     |
 +-----------------------------------------+----------------+
 M union find operations on a set of N objects
 ```
@@ -165,6 +165,23 @@ Balanced search trees
 - Support for ordered ST operations
 - Easier to implement compareTo() correctly than equals() and hashCode()
 ## List
+```
++--------+-------------------+-------+--------------------+--------------------+
+|        |                   | Array | Singly-Linked List | Doubly-Linked List | 
++--------+-------------------+-------+--------------------+--------------------+
+| Access | by index          | O(1)  | O(N)               | O(n)               |
++--------+----------+--------+----------------------------+--------------------+
+|        | before first node | O(N)  | O(1)               | O(1)               | 
+| Add    | after given node  | O(N)  | O(1)               | O(1)               | 
+|        | after last node   | O(1)  | O(N)               | O(1)               | 
++--------+-------------------+-------+--------------------+--------------------+
+|        | the first node    | O(N)  | O(1)               | O(1)               | 
+| Delete | a given node      | O(N)  | O(N)               | O(1)               | 
+|        | the last node     | O(1)  | O(N)               | O(1)               | 
++--------+-------------------+-------+--------------------+--------------------+
+| Search | a given node      | O(N)  | O(N)               | O(n)               |
++--------+-------------------+-------+--------------------+--------------------+
+```
 ### Stack
 LIFO - last in first out
 ### Queue
