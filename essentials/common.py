@@ -1,4 +1,4 @@
-def multiply_karatsuba(x, y):
+def multiply_karatsuba(x: int, y: int) -> int:
     """
     Karatsuba algorithm
     Time complexity: O(log n)

@@ -1,4 +1,4 @@
-def bubble_sort(lst):
+def bubble_sort(lst: list):
     """
     >>> lst = [54, 26, 93, 17, 77, 31, 44, 55, 20]
     >>> bubble_sort(lst)
@@ -12,7 +12,7 @@ def bubble_sort(lst):
                 lst[j], lst[j + 1] = lst[j + 1], lst[j]
 
 
-def selection_sort(lst):
+def selection_sort(lst: list):
     """
     >>> lst = [54, 26, 93, 17, 77, 31, 44, 55, 20]
     >>> selection_sort(lst)
@@ -29,7 +29,7 @@ def selection_sort(lst):
         lst[min_index], lst[i] = lst[i], lst[min_index]
 
 
-def insertion_sort(lst):
+def insertion_sort(lst: list):
     """
     >>> lst = [54, 26, 93, 17, 77, 31, 44, 55, 20]
     >>> insertion_sort(lst)
@@ -45,14 +45,14 @@ def insertion_sort(lst):
         lst[pos] = val
 
 
-def merge_sort(lst):
+def merge_sort(lst: list):
     """
     >>> lst = [54, 26, 93, 17, 77, 31, 44, 55, 20]
     >>> merge_sort(lst)
     >>> lst == [17, 20, 26, 31, 44, 54, 55, 77, 93]
     True
     """
-    def merge(lst, left, right):
+    def merge(lst: list, left: list, right: list):
         i = j = k = 0
         while i < len(left) and j < len(right):
             if left[i] < right[j]:
@@ -82,14 +82,14 @@ def merge_sort(lst):
     merge(lst, left, right)
 
 
-def quick_sort(lst):
+def quick_sort(lst: list):
     """
     >>> lst = [54, 26, 93, 17, 77, 31, 44, 55, 20]
     >>> quick_sort(lst)
     >>> lst == [17, 20, 26, 31, 44, 54, 55, 77, 93]
     True
     """
-    def partition(lst, start, end):
+    def partition(lst: list, start: int, end: int):
         follower = leader = start
         while leader < end:
             if lst[leader] <= lst[end]:

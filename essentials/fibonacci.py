@@ -1,4 +1,7 @@
-def fibonacci_loop(n):
+from typing import List
+
+
+def fibonacci_loop(n: int) -> int:
     """
     >>> fibonacci_loop(16)
     987
@@ -13,7 +16,7 @@ def fibonacci_loop(n):
     return a
 
 
-def fibonacci_generator(n):
+def fibonacci_generator(n: int) -> List[int]:
     """
     >>> list(fibonacci_generator(16))[-1]
     987
@@ -28,7 +31,7 @@ def fibonacci_generator(n):
         a, b = b, a+b
 
 
-def fibonacci_recursion(n):
+def fibonacci_recursion(n: int) -> int:
     """
     Time complexity: O(2**n)
     >>> fibonacci_recursion(16)
@@ -43,7 +46,7 @@ def fibonacci_recursion(n):
     return fibonacci_recursion(n-1) + fibonacci_recursion(n-2)
 
 
-def fibonacci_memo(n, memo=None):
+def fibonacci_memo(n: int, memo: dict = None) -> int:
     """
     Dynamic Programming "top-down"
     Time complexity: O(n)
@@ -86,7 +89,7 @@ def fibonacci_dp(n: int) -> int:
     return dp[n]
 
 
-def fibonacci_fast_doubling(n):
+def fibonacci_fast_doubling(n: int) -> int:
     """
     Divide-and-conquer algorithm
     Time complexity: O(log(n))

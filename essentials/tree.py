@@ -1,17 +1,18 @@
-"""
-Maximum Depth of N-ary Tree
-              1
-            / | \
-           3  2  4
-          / \
-         5  6
-Input: root = [1,null,3,2,4,null,5,6]
-Output: 3
-"""
+from typing import List
 
 
 class Node:
-    def __init__(self, val=None, children=None):
+    """
+    Maximum Depth of N-ary Tree
+                  1
+                / | \
+               3  2  4
+              / \
+             5  6
+    Input: root = [1,null,3,2,4,null,5,6]
+    Output: 3
+    """
+    def __init__(self, val: int = None, children: List = None):
         self.val = val
         self.children = children if children else []
 

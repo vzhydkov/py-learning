@@ -1,7 +1,7 @@
 import math
 
 
-def slow_is_prime(n):
+def slow_is_prime(n: int) -> bool:
 	"""
 	Time complexity: 0(n)
 	>>> slow_is_prime(199)
@@ -13,9 +13,9 @@ def slow_is_prime(n):
 	return True
 
 
-def is_prime(n):
+def is_prime(n: int) -> int:
 	"""
-	Time complexity: √n
+	Time complexity: O(√n)
 	>>> is_prime(199)
 	True
 	"""

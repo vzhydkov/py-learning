@@ -5,14 +5,14 @@ from collections import deque
 
 # Singly linked list node
 class SLLNode:
-	def __init__(self, data):
+	def __init__(self, data: any = None):
 		self.data = data
 		self.next = None
 
 
 # Double linked list node
 class DLLNode:
-	def __init__(self, data=None):
+	def __init__(self, data: any = None):
 		self.data = data
 		self.next = None
 		self.prev = None

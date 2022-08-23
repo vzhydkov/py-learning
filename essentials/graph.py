@@ -8,7 +8,7 @@ class ConnectedComponents:
     Space complexity: O(E+V)
     Where E = Number of edges, V = Number of vertices
     """
-    def dfs(self, node, graph, visited):
+    def dfs(self, node: int, graph: List[List[int]], visited: List[bool]):
         for adjacency in graph[node]:
             if not visited[adjacency]:
                 visited[adjacency] = True
@@ -38,20 +38,20 @@ class NeighboursGraph:
     ROW_SHIFT = [0, 1, 0, -1]
     COL_SHIFT = [-1, 0, 1, 0]
 
-    def __init__(self, graph):
+    def __init__(self, graph: List[List[int]]):
         self.graph = graph
         self.n_row = len(graph)
         self.n_col = len(graph[0])
         self.count = 0
         self.curr_neighbour = None
 
-    def is_safe(self, i, j, visited):
+    def is_safe(self, i: int, j: int, visited: List[List[bool]]):
         return (0 <= i < self.n_row
                 and 0 <= j < self.n_col
                 and not visited[i][j]
                 and self.graph[i][j] == self.curr_neighbour)
 
-    def dfs(self, i, j, visited):
+    def dfs(self, i: int, j: int, visited: List[List[bool]]):
         self.count += 1
         visited[i][j] = True
         # recur for all connected neighbours
@@ -102,7 +102,7 @@ if __name__ == "__main__":
         'E': []
     }
 
-    def dfs(visited, graph, node):
+    def dfs(visited: set, graph: dict, node: str):
         if node not in visited:
             visited.add(node)
             for neighbor in graph[node]:
@@ -111,14 +111,14 @@ if __name__ == "__main__":
     dfs(visited, graph, "A")
     assert visited == {'E', 'B', 'A', 'C', 'D'}
 
-    def bfs(visited, graph, node):
-        visited.append(node)
+    def bfs(visited: set, graph: dict, node: str):
+        visited.add(node)
         queue.append(node)
         while queue:
             s = queue.pop(0)
             for neighbor in graph[s]:
                 if neighbor not in visited:
-                    visited.append(neighbor)
+                    visited.add(neighbor)
                     queue.append(neighbor)
     visited = set()
     queue = []

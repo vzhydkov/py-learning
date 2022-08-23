@@ -1,4 +1,7 @@
-def factorial_loop(n):
+from typing import List
+
+
+def factorial_loop(n: int) -> int:
     """
     >>> factorial_loop(16)
     20922789888000
@@ -11,7 +14,7 @@ def factorial_loop(n):
     return res
 
 
-def factorial_generator(n):
+def factorial_generator(n: int) -> List[int]:
     """
     >>> list(factorial_generator(16))[-1]
     20922789888000
@@ -24,7 +27,7 @@ def factorial_generator(n):
         yield res
 
 
-def factorial_while(n):
+def factorial_while(n: int) -> int:
     """
     >>> factorial_while(16)
     20922789888000
@@ -38,7 +41,7 @@ def factorial_while(n):
     return res
 
 
-def factorial_recursion(n):
+def factorial_recursion(n: int) -> int:
     """
     >>> factorial_recursion(16)
     20922789888000
