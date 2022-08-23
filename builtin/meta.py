@@ -11,8 +11,8 @@ def with_metaclass(meta, *bases):
 
 
 class Meta(type):
-    def __new__(meta, name, bases, attrs):
-        return type.__new__(meta, name, bases, attrs)
+    def __new__(mcs, name, bases, attrs):
+        return type.__new__(mcs, name, bases, attrs)
         # return super(Meta, meta).__new__(meta, name, bases, attrs)
 
     def __init__(cls, name, bases, attrs):
