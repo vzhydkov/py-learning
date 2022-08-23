@@ -1,6 +1,3 @@
-from typing import List
-
-
 class Node:
     """
     Maximum Depth of N-ary Tree
@@ -12,7 +9,7 @@ class Node:
     Input: root = [1,null,3,2,4,null,5,6]
     Output: 3
     """
-    def __init__(self, val: int = None, children: List = None):
+    def __init__(self, val: int = None, children: list = None):
         self.val = val
         self.children = children if children else []
 
