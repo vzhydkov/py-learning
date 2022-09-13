@@ -5,6 +5,8 @@
 - [Metaclass](meta.py)
 - [Overloading](overloading.py)
 - [Signleton](singleton.py)
+
+![Python specialist](python.jpg)
 ### Regular Expressions
 - a, X, 9, < -- ordinary characters just match themselves exactly. The meta-characters which do not match themselves because they have special meanings are: . ^ $ * + ? { [ ] \ | ( ) (details below)
 - . (a period) -- matches any single character except newline '\n'
@@ -16,4 +18,3 @@
 - ^ = start, $ = end -- match the start or end of the string
 - \ -- inhibit the "specialness" of a character. So, for example, use \. to match a period or \\ to match a slash. If you are unsure if a character has special meaning, such as '@', you can put a slash in front of it, \@, to make sure it is treated just as a character.
 
-![Python specialist](python.jpg)
