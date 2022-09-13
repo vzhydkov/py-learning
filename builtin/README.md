@@ -15,3 +15,5 @@
 - \d -- decimal digit [0-9] (some older regex utilities do not support but \d, but they all support \w and \s)
 - ^ = start, $ = end -- match the start or end of the string
 - \ -- inhibit the "specialness" of a character. So, for example, use \. to match a period or \\ to match a slash. If you are unsure if a character has special meaning, such as '@', you can put a slash in front of it, \@, to make sure it is treated just as a character.
+
+![Python specialist](python.jpg)
